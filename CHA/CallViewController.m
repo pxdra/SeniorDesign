@@ -1,0 +1,120 @@
+//
+//  CallViewController.m
+//  CHA
+//
+//  Created by mfong on 1/15/13.
+//  Copyright (c) 2013 Brian Sun. All rights reserved.
+//
+
+#import "CallViewController.h"
+
+@interface CallViewController ()
+
+@end
+
+@implementation CallViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+
+    return self;
+}
+
+- (void)loadView
+{
+    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    // make buttons
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
+    // positions
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    CGFloat middleOffset = 100.0;
+    CGFloat leftRightOffset = 10;
+    CGFloat buttonHeight = 30;
+    button.frame = CGRectMake(leftRightOffset, screenHeight/2 - middleOffset, screenWidth - leftRightOffset*2, buttonHeight);
+    button2.frame = CGRectMake(leftRightOffset, screenHeight/2 , screenWidth - leftRightOffset*2, buttonHeight);
+    // titles
+    NSString * msg1 = @"Call office: 404-255-1933";
+    NSString * msg2 = @"Concussion Hotline: 678-686-6867";
+    [button setTitle:msg1 forState:UIControlStateNormal];
+    [button2 setTitle:msg2 forState:UIControlStateNormal];
+    
+    // clicklisteners
+    [button addTarget:self action:@selector(buttonAction1)
+     forControlEvents:UIControlEventTouchUpInside];
+    [button2 addTarget:self action:@selector(buttonAction2)
+     forControlEvents:UIControlEventTouchUpInside];
+    
+    // add to view
+    [self.view addSubview:button];
+    [self.view addSubview:button2];
+}
+
+-(IBAction)buttonAction1
+{
+    NSString * question = @"Call office: 404-255-1933?";
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:question delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES",nil];
+    [alert setTag:1];
+    [alert show];
+//    [alert release];
+}
+-(IBAction)buttonAction2
+{
+    NSString * question = @"Call Concussion Hotline: 678-686-6867";
+    UIAlertView *alert2=[[UIAlertView alloc]initWithTitle:@"" message:question delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES",nil];
+    [alert2 show];
+//    [alert release];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(alertView.tag == 1)
+    {
+        if(buttonIndex==1)
+        {
+            NSLog(@"Attempting to call office");
+            [[UIApplication sharedApplication]
+             openURL:[NSURL URLWithString:@"tel://404-255-1933"]];
+        }
+        else
+        {
+            NSLog(@"No?");
+        }
+    }
+    else
+    {
+        if(buttonIndex==1)
+        {
+            NSLog(@"Attempting to call concussion hotline");
+            [[UIApplication sharedApplication]
+             openURL:[NSURL URLWithString:@"tel://678-686-6867"]];
+        }
+        else
+        {
+            NSLog(@"No?");
+        }
+    }
+}
+
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+@end

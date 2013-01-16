@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720D039716A6624100121249 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720D039616A6624100121249 /* CallViewController.m */; };
 		9A20534416A5F28800399FB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534316A5F28800399FB0 /* UIKit.framework */; };
 		9A20534616A5F28800399FB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534516A5F28800399FB0 /* Foundation.framework */; };
 		9A20534816A5F28800399FB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534716A5F28800399FB0 /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		720D039516A6624100121249 /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
+		720D039616A6624100121249 /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
 		9A20533F16A5F28800399FB0 /* CHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A20534316A5F28800399FB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A20534516A5F28800399FB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				9A20535216A5F28800399FB0 /* AppDelegate.h */,
+				720D039516A6624100121249 /* CallViewController.h */,
+				720D039616A6624100121249 /* CallViewController.m */,
 				9A20535316A5F28800399FB0 /* AppDelegate.m */,
 				9A20535B16A5F28800399FB0 /* MainStoryboard_iPhone.storyboard */,
 				9A20537A16A5F82300399FB0 /* Phone.png */,
@@ -224,6 +229,7 @@
 				9A20536316A5F28800399FB0 /* FirstViewController.m in Sources */,
 				9A20536A16A5F28800399FB0 /* FacebookViewController.m in Sources */,
 				9A20538016A5F99600399FB0 /* TwitterViewController.m in Sources */,
+				720D039716A6624100121249 /* CallViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +356,7 @@
 				9A20537316A5F28800399FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
