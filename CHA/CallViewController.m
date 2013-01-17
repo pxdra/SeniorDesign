@@ -23,9 +23,11 @@
 
     return self;
 }
-
-- (void)loadView
+/*
+- (void)viewDidLoad
 {
+  /*
+  
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -49,15 +51,8 @@
     [button2 setTitle:msg2 forState:UIControlStateNormal];
     
     // clicklisteners
-    [button addTarget:self action:@selector(buttonAction1)
-     forControlEvents:UIControlEventTouchUpInside];
-    [button2 addTarget:self action:@selector(buttonAction2)
-     forControlEvents:UIControlEventTouchUpInside];
-    
-    // add to view
-    [self.view addSubview:button];
-    [self.view addSubview:button2];
 }
+   */
 
 -(IBAction)buttonAction1
 {
@@ -109,6 +104,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [_CallOffice addTarget:self action:@selector(buttonAction1)
+        forControlEvents:UIControlEventTouchUpInside];
+    [_CallConcussion addTarget:self action:@selector(buttonAction2)
+            forControlEvents:UIControlEventTouchUpInside];
 	// Do any additional setup after loading the view.
 }
 

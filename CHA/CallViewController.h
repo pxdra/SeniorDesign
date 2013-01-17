@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CallViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *CallOffice;
+@property (weak, nonatomic) IBOutlet UIButton *CallConcussion;
 
 @end
