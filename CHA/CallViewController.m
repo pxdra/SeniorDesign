@@ -8,6 +8,9 @@
 
 #import "CallViewController.h"
 
+#define OFFICE 1
+#define CONCUSSION 2
+
 @interface CallViewController ()
 
 @end
@@ -71,30 +74,30 @@
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if(alertView.tag == 1)
+    if(alertView.tag == OFFICE)
     {
-        if(buttonIndex==1)
+        if(buttonIndex == 1)
         {
-            NSLog(@"Attempting to call office");
+            NSLog(@"Attempting to call office.");
             [[UIApplication sharedApplication]
              openURL:[NSURL URLWithString:@"tel://404-255-1933"]];
         }
         else
         {
-            NSLog(@"No?");
+            NSLog(@"Did not call office.");
         }
     }
     else
     {
-        if(buttonIndex==1)
+        if(buttonIndex == 1)
         {
-            NSLog(@"Attempting to call concussion hotline");
+            NSLog(@"Attempting to call concussion hotline.");
             [[UIApplication sharedApplication]
              openURL:[NSURL URLWithString:@"tel://678-686-6867"]];
         }
         else
         {
-            NSLog(@"No?");
+            NSLog(@"Did not call concussion hotline.");
         }
     }
 }
