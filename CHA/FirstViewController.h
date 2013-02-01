@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface FirstViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *MakeAppointmentButton;
+@property (weak, nonatomic) IBOutlet UIButton *TheTeamButton;
+@property (weak, nonatomic) IBOutlet UIButton *LocationsButton;
+@property (weak, nonatomic) IBOutlet UIButton *AboutUsButton;
 
 @end

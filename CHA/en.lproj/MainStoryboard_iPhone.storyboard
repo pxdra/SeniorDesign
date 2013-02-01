@@ -9,7 +9,7 @@
             <objects>
                 <viewController title="First" id="2" customClass="FirstViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWk-LB-6qS">
@@ -21,6 +21,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="B5S-kI-Iev" kind="push" id="DEs-Y4-AlQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hID-Fx-Wj9">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -31,6 +34,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="tm0-DZ-hK2" kind="push" id="pyd-bV-6fX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLA-PE-3om">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -41,6 +47,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6Ma-B1-UWu" kind="push" id="zae-9H-pLY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DA-95-TId">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -51,6 +60,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="CTF-m1-cRw" kind="push" id="GaM-O3-5f6"/>
+                                </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="childrens-orthopaedics-atlanta-logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5K5-Gw-VRH"/>
                         </subviews>
@@ -59,23 +71,147 @@
                             <constraint firstItem="hID-Fx-Wj9" firstAttribute="leading" secondItem="HWk-LB-6qS" secondAttribute="leading" type="default" id="4I3-qn-z1R"/>
                             <constraint firstItem="CLA-PE-3om" firstAttribute="trailing" secondItem="hID-Fx-Wj9" secondAttribute="trailing" type="default" id="6GM-FF-ukd"/>
                             <constraint firstItem="5K5-Gw-VRH" firstAttribute="centerX" secondItem="HWk-LB-6qS" secondAttribute="centerX" type="default" id="Ac9-Cw-C0w"/>
-                            <constraint firstItem="8DA-95-TId" firstAttribute="top" secondItem="CLA-PE-3om" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="BxX-Bb-ydp"/>
                             <constraint firstItem="hID-Fx-Wj9" firstAttribute="trailing" secondItem="HWk-LB-6qS" secondAttribute="trailing" type="default" id="F48-9G-SZf"/>
+                            <constraint firstItem="hID-Fx-Wj9" firstAttribute="top" secondItem="HWk-LB-6qS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ihf-RF-mlp"/>
+                            <constraint firstItem="CLA-PE-3om" firstAttribute="top" secondItem="hID-Fx-Wj9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="L9K-df-moF"/>
                             <constraint firstItem="CLA-PE-3om" firstAttribute="leading" secondItem="8DA-95-TId" secondAttribute="leading" type="default" id="OAb-4T-f9R"/>
-                            <constraint firstItem="hID-Fx-Wj9" firstAttribute="top" secondItem="HWk-LB-6qS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OFX-ZR-sj0"/>
-                            <constraint firstItem="HWk-LB-6qS" firstAttribute="top" secondItem="16" secondAttribute="top" constant="165" id="W5B-a1-ATY"/>
+                            <constraint firstItem="8DA-95-TId" firstAttribute="top" secondItem="CLA-PE-3om" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QXy-EA-FQu"/>
+                            <constraint firstItem="8DA-95-TId" firstAttribute="centerX" secondItem="16" secondAttribute="centerX" type="default" id="b9B-ov-3ve"/>
                             <constraint firstItem="8DA-95-TId" firstAttribute="trailing" secondItem="CLA-PE-3om" secondAttribute="trailing" type="default" id="el5-jl-CJ4"/>
-                            <constraint firstItem="CLA-PE-3om" firstAttribute="top" secondItem="hID-Fx-Wj9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="g2g-5k-7s0"/>
+                            <constraint firstItem="HWk-LB-6qS" firstAttribute="top" secondItem="16" secondAttribute="top" constant="144" id="kb8-09-gih"/>
+                            <constraint firstItem="5K5-Gw-VRH" firstAttribute="top" secondItem="16" secondAttribute="top" constant="9" id="p0Z-Rb-muY"/>
                             <constraint firstItem="hID-Fx-Wj9" firstAttribute="leading" secondItem="CLA-PE-3om" secondAttribute="leading" type="default" id="wbY-ax-Vqe"/>
-                            <constraint firstItem="8DA-95-TId" firstAttribute="centerX" secondItem="16" secondAttribute="centerX" type="default" id="xpf-MH-Zcv"/>
-                            <constraint firstItem="5K5-Gw-VRH" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="zV5-DS-deq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="7"/>
+                    <navigationItem key="navigationItem" id="nbv-tP-Ecv"/>
+                    <connections>
+                        <outlet property="AboutUsButton" destination="8DA-95-TId" id="ZOd-dl-I6Y"/>
+                        <outlet property="LocationsButton" destination="CLA-PE-3om" id="M0i-Oz-QUF"/>
+                        <outlet property="MakeAppointmentButton" destination="HWk-LB-6qS" id="58e-SK-oWl"/>
+                        <outlet property="TheTeamButton" destination="hID-Fx-Wj9" id="4c5-xr-UEP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="-138"/>
+            <point key="canvasLocation" x="493" y="-616"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hBc-B4-Uxm">
+            <objects>
+                <viewController id="tm0-DZ-hK2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n8A-4D-tk8">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="X8V-Jp-duL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EGx-WY-C8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037" y="-512"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I28-VZ-Tt8">
+            <objects>
+                <viewController id="CTF-m1-cRw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ofk-mb-Xr0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRH-QJ-Mxo">
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.81960784310000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Children's Orthopaedics of Atlanta (COA) is one of the most respected pediatric orthopaedic medical practices in the country. Each year, thousands of patients ranging in age from infancy through adolescence come to COA seeking specialized medical and surgical care for their musculoskeletal diseases and injries</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Eu-Ds-tpA">
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.81960784310000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="yr8-sY-lGb"/>
+                                </constraints>
+                                <string key="text">Quite simply, COA offers families a unique combination.
+• Unmatched physician expertise
+• Pediatric focus
+• Collaboration with your child’s other providers and coaches
+• Ease of scheduling appointments
+• Accessible locations throughout metro Atlanta
+• Commitment to customer service
+• Affiliated with Children’s Healthcare of Atlanta</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Why Choose COA?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PuZ-a7-wEP">
+                                <color key="backgroundColor" red="0.29019607843137252" green="0.11764705882352941" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="rhn-t4-WAv"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.81960784313725488" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Eu-Ds-tpA" firstAttribute="trailing" secondItem="ofk-mb-Xr0" secondAttribute="trailing" type="default" id="4RM-OK-fkk"/>
+                            <constraint firstItem="PuZ-a7-wEP" firstAttribute="leading" secondItem="ofk-mb-Xr0" secondAttribute="leading" type="default" id="D9Q-Et-M1f"/>
+                            <constraint firstItem="PuZ-a7-wEP" firstAttribute="top" secondItem="eRH-QJ-Mxo" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="EJb-0A-UE3"/>
+                            <constraint firstItem="eRH-QJ-Mxo" firstAttribute="trailing" secondItem="ofk-mb-Xr0" secondAttribute="trailing" type="default" id="Q47-gv-L5l"/>
+                            <constraint firstItem="PuZ-a7-wEP" firstAttribute="trailing" secondItem="ofk-mb-Xr0" secondAttribute="trailing" type="default" id="T9i-oR-eYG"/>
+                            <constraint firstItem="PuZ-a7-wEP" firstAttribute="top" secondItem="ofk-mb-Xr0" secondAttribute="top" constant="131" id="bZF-gD-Bno"/>
+                            <constraint firstItem="eRH-QJ-Mxo" firstAttribute="leading" secondItem="ofk-mb-Xr0" secondAttribute="leading" type="default" id="cXO-i9-Rol"/>
+                            <constraint firstItem="eRH-QJ-Mxo" firstAttribute="top" secondItem="ofk-mb-Xr0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="gjv-OZ-QEY"/>
+                            <constraint firstItem="4Eu-Ds-tpA" firstAttribute="leading" secondItem="ofk-mb-Xr0" secondAttribute="leading" type="default" id="uOH-As-J1g"/>
+                            <constraint firstItem="4Eu-Ds-tpA" firstAttribute="top" secondItem="PuZ-a7-wEP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="v37-Nk-Uhe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NC0-8r-r5D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eev-GD-fKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="493" y="108"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sly-fR-Gtb">
+            <objects>
+                <viewController id="6Ma-B1-UWu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gdp-Ng-gKz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yzv-Id-7wF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvG-7c-SHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037" y="178"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Cgt-Oe-Iah">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJN-z9-f0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="B5S-kI-Iev" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bem-nx-MkN">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tGj-Su-x9D">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="AV8-Kc-jmX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tGj-Su-x9D" firstAttribute="top" secondItem="Bem-nx-MkN" secondAttribute="top" constant="183" id="RC1-wc-rDg"/>
+                            <constraint firstItem="tGj-Su-x9D" firstAttribute="leading" secondItem="Bem-nx-MkN" secondAttribute="leading" constant="128" id="T3K-5I-tPk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bts-M6-akB"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1041" y="-1207"/>
         </scene>
         <!--Facebook View Controller - Second-->
         <scene sceneID="13">
@@ -105,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="526"/>
+            <point key="canvasLocation" x="-33" y="48"/>
         </scene>
         <!--Call View Controller - Call Us-->
         <scene sceneID="SSZ-5L-IQy">
@@ -152,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1d-YF-fcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="226" y="1726"/>
+            <point key="canvasLocation" x="-460" y="1248"/>
         </scene>
         <!--Twitter View Controller - Twitter-->
         <scene sceneID="Zs1-vl-bqP">
@@ -183,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VM7-5c-TLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="1243"/>
+            <point key="canvasLocation" x="-33" y="765"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -196,7 +332,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
+                        <segue destination="6nG-ES-hS1" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="e9E-ZH-SMo" kind="relationship" relationship="viewControllers" id="9Bg-ZR-P02"/>
                         <segue destination="qR0-6a-4XN" kind="relationship" relationship="viewControllers" id="lc2-wY-Jd3"/>
@@ -204,7 +340,26 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="180"/>
+            <point key="canvasLocation" x="-554" y="-298"/>
+        </scene>
+        <!--Navigation Controller - Home-->
+        <scene sceneID="Ix1-RZ-lxm">
+            <objects>
+                <navigationController id="6nG-ES-hS1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jKQ-6l-goc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="dMd-uz-agw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3g2-zQ-OGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33" y="-616"/>
         </scene>
     </scenes>
     <resources>
@@ -230,6 +385,12 @@
         </class>
         <class className="FirstViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="AboutUsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="LocationsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="MakeAppointmentButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="TheTeamButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

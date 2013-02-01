@@ -29,8 +29,6 @@
 /*
 - (void)viewDidLoad
 {
-  /*
-  
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.view.backgroundColor = [UIColor whiteColor];
     
