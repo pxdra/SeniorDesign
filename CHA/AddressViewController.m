@@ -1,18 +1,18 @@
 //
-//  Map1ViewController.m
+//  AddressViewController.m
 //  CHA
 //
-//  Created by mfong on 2/1/13.
+//  Created by Brian Sun on 2/9/13.
 //  Copyright (c) 2013 Brian Sun. All rights reserved.
 //
 
-#import "Map1ViewController.h"
+#import "AddressViewController.h"
 
-@interface Map1ViewController ()
+@interface AddressViewController ()
 
 @end
 
-@implementation Map1ViewController
+@implementation AddressViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
