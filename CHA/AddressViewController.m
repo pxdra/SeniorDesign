@@ -43,10 +43,7 @@
   
   [locationManager startUpdatingLocation];
 
-  [self.mapView.userLocation addObserver:self
-                               forKeyPath:@"location"
-                                  options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
-                                  context:nil];
+  
   self->_mapView.showsUserLocation = YES;
   [self recenterMap];
 	// Do any additional setup after loading the view.
@@ -80,7 +77,7 @@
     maxLatitude =self.mapView.userLocation.coordinate.latitude;
   }
   else
-  {
+  { 
     maxLatitude = _pin.coordinate.latitude;
     minLatitude =self.mapView.userLocation.coordinate.latitude;
   }
