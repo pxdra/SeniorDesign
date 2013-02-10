@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Location.h"
+#import "AddressViewController.h"
 
-@interface LocationViewController : UITableViewController
+@interface LocationViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property NSArray* tableData;
+@property Location* selectedLoc;
 @end

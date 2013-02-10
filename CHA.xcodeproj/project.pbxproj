@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		720D039716A6624100121249 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720D039616A6624100121249 /* CallViewController.m */; };
 		724BA6D616C039AB00BCE3FA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 724BA6D516C039AB00BCE3FA /* icon.png */; };
-		725E189116BC85A400110216 /* Map1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725E189016BC85A400110216 /* Map1ViewController.m */; };
 		72E3061F16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72E3061E16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg */; };
 		9A20534416A5F28800399FB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534316A5F28800399FB0 /* UIKit.framework */; };
 		9A20534616A5F28800399FB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534516A5F28800399FB0 /* Foundation.framework */; };
@@ -33,14 +32,17 @@
 		9A20537916A5F79800399FB0 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A20537816A5F79800399FB0 /* Twitter.png */; };
 		9A20537B16A5F82300399FB0 /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A20537A16A5F82300399FB0 /* Phone.png */; };
 		9A20538016A5F99600399FB0 /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20537F16A5F99600399FB0 /* TwitterViewController.m */; };
+		9A9D7C5016C745C800F1FEA6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9D7C4F16C745C800F1FEA6 /* MapKit.framework */; };
+		9A9D7C5316C7460000F1FEA6 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D7C5216C7460000F1FEA6 /* AddressViewController.m */; };
+		9A9D7C5516C758A600F1FEA6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9D7C5416C758A600F1FEA6 /* CoreLocation.framework */; };
+		9AF04B9916C70304002087FD /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF04B9816C70304002087FD /* LocationViewController.m */; };
+		9AF04B9F16C711D8002087FD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF04B9E16C711D8002087FD /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		720D039516A6624100121249 /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
 		720D039616A6624100121249 /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
 		724BA6D516C039AB00BCE3FA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		725E188F16BC85A400110216 /* Map1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map1ViewController.h; sourceTree = "<group>"; };
-		725E189016BC85A400110216 /* Map1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map1ViewController.m; sourceTree = "<group>"; };
 		72E3061E16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "childrens-orthopaedics-atlanta-logo.jpg"; sourceTree = "<group>"; };
 		9A20533F16A5F28800399FB0 /* CHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A20534316A5F28800399FB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -71,6 +73,14 @@
 		9A20537A16A5F82300399FB0 /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
 		9A20537E16A5F99600399FB0 /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
 		9A20537F16A5F99600399FB0 /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
+		9A9D7C4F16C745C800F1FEA6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9A9D7C5116C7460000F1FEA6 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
+		9A9D7C5216C7460000F1FEA6 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
+		9A9D7C5416C758A600F1FEA6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9AF04B9716C70304002087FD /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		9AF04B9816C70304002087FD /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		9AF04B9D16C711D8002087FD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		9AF04B9E16C711D8002087FD /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A9D7C5516C758A600F1FEA6 /* CoreLocation.framework in Frameworks */,
+				9A9D7C5016C745C800F1FEA6 /* MapKit.framework in Frameworks */,
 				9A20534416A5F28800399FB0 /* UIKit.framework in Frameworks */,
 				9A20534616A5F28800399FB0 /* Foundation.framework in Frameworks */,
 				9A20534816A5F28800399FB0 /* CoreGraphics.framework in Frameworks */,
@@ -90,6 +102,8 @@
 		9A20533416A5F28800399FB0 = {
 			isa = PBXGroup;
 			children = (
+				9A9D7C5416C758A600F1FEA6 /* CoreLocation.framework */,
+				9A9D7C4F16C745C800F1FEA6 /* MapKit.framework */,
 				9A20534916A5F28800399FB0 /* CHA */,
 				9A20534216A5F28800399FB0 /* Frameworks */,
 				9A20534016A5F28800399FB0 /* Products */,
@@ -117,13 +131,17 @@
 		9A20534916A5F28800399FB0 /* CHA */ = {
 			isa = PBXGroup;
 			children = (
+				9A9D7C5116C7460000F1FEA6 /* AddressViewController.h */,
+				9A9D7C5216C7460000F1FEA6 /* AddressViewController.m */,
 				9A20535216A5F28800399FB0 /* AppDelegate.h */,
 				720D039516A6624100121249 /* CallViewController.h */,
 				720D039616A6624100121249 /* CallViewController.m */,
 				9A20535316A5F28800399FB0 /* AppDelegate.m */,
 				9A20535B16A5F28800399FB0 /* MainStoryboard_iPhone.storyboard */,
-				725E188F16BC85A400110216 /* Map1ViewController.h */,
-				725E189016BC85A400110216 /* Map1ViewController.m */,
+				9AF04B9D16C711D8002087FD /* Location.h */,
+				9AF04B9E16C711D8002087FD /* Location.m */,
+				9AF04B9716C70304002087FD /* LocationViewController.h */,
+				9AF04B9816C70304002087FD /* LocationViewController.m */,
 				9A20537A16A5F82300399FB0 /* Phone.png */,
 				9A20537816A5F79800399FB0 /* Twitter.png */,
 				9A20537616A5F58000399FB0 /* Fb.png */,
@@ -243,7 +261,9 @@
 				9A20536A16A5F28800399FB0 /* FacebookViewController.m in Sources */,
 				9A20538016A5F99600399FB0 /* TwitterViewController.m in Sources */,
 				720D039716A6624100121249 /* CallViewController.m in Sources */,
-				725E189116BC85A400110216 /* Map1ViewController.m in Sources */,
+				9AF04B9916C70304002087FD /* LocationViewController.m in Sources */,
+				9AF04B9F16C711D8002087FD /* Location.m in Sources */,
+				9A9D7C5316C7460000F1FEA6 /* AddressViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

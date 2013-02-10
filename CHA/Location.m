@@ -10,22 +10,33 @@
 
 @implementation Location
 
-- (id)initWithFrame:(CGRect)frame
+- (id) initWithName: (NSString *) inName WithAddress: (NSString *) inAddress WithDisc: (NSString *) inDisc WithLocData:(NSString *)inLocData
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+  name=inName;
+  address = inAddress;
+  disc = inDisc;
+  locData = inLocData;
+  return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+-(NSString *) getName
 {
-    // Drawing code
+  return name;
 }
-*/
+
+- (NSString *) getDisc
+{
+  return disc;
+}
+
+- (NSString*) getAddress
+{
+  return address;
+}
+
+- (NSString *) getLocData
+{
+  return locData;
+}
 
 @end

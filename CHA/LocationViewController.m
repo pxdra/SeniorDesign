@@ -16,106 +16,102 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+  self = [super initWithStyle:style];
+  if (self) {
+    // Custom initialization
+  }
+  return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+  [super viewDidLoad];
+  _tableData = [self getData];
+  // Uncomment the following line to preserve selection between presentations.
+  // self.clearsSelectionOnViewWillAppear = NO;
  
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+  // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (NSArray*) getData
+{
+  Location *loc1 = [Location alloc];
+  loc1 = [loc1 initWithName:@"Meridian Mark" WithAddress:@"5445 Meridian Mark Road Suite 250 Atlanta, GA 30342" WithDisc:@"5445 Meridian Mark Road \nSuite 250 \nAtlanta, GA 30342" WithLocData:@"33.903645,-84.354127"];
+  
+  Location *loc2 = [Location alloc];
+  loc2 = [loc2 initWithName:@"Alpharetta" WithAddress:@"5445 Meridian Mark Road Suite 250 Atlanta, GA 30342" WithDisc:@"" WithLocData:@""];
+  
+  Location *loc3 = [Location alloc];
+  loc3 = [loc3 initWithName:@"Duluth" WithAddress:@"5445 Meridian Mark Road Suite 250 Atlanta, GA 30342" WithDisc:@"" WithLocData:@""];
+  
+  Location *loc4 = [Location alloc];
+  loc4 = [loc4 initWithName:@"Fayette" WithAddress:@"5445 Meridian Mark Road Suite 250 Atlanta, GA 30342" WithDisc:@"" WithLocData:@""];
+  
+  return [NSArray arrayWithObjects:loc1, loc2, loc3, loc4, nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+  // Return the number of sections.
+  return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+  // Return the number of rows in the section.
+  return [_tableData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+  static NSString *CellIdentifier = @"locationCells";
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+  }
+  UIButton *locButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  locButton.frame = CGRectMake(30.0f, 0.0f, 260.0f, 44.0f);
+  //locButton.backgroundColor = [UIColor redColor];
+  [locButton setTitle:[[_tableData objectAtIndex:indexPath.row] getName] forState:UIControlStateNormal];
+  [locButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+  [cell addSubview:locButton];
+  [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+  
+  return cell;
+}
+- (void) buttonAction: (id) sender{
+  UIButton *button = (UIButton *)sender;
+  UITableViewCell* cell = (UITableViewCell*)[[button superview]superview];
+  int row = [self.tableView indexPathForCell:cell].row;
+  self.selectedLoc = [_tableData objectAtIndex:row];
+  [self performSegueWithIdentifier:@"ViewMapSegue" sender:self];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  UIViewController* destination = [segue destinationViewController];
+  if([destination isKindOfClass: [AddressViewController class]]) {
+    AddressViewController* upcomingDataView = [segue destinationViewController];
+    [upcomingDataView setLoc:_selectedLoc];    
+  }
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+
 }
 
 @end
