@@ -32,6 +32,7 @@
 		9A20537916A5F79800399FB0 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A20537816A5F79800399FB0 /* Twitter.png */; };
 		9A20537B16A5F82300399FB0 /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A20537A16A5F82300399FB0 /* Phone.png */; };
 		9A20538016A5F99600399FB0 /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20537F16A5F99600399FB0 /* TwitterViewController.m */; };
+		9A38BA0016C8B3E8003EA214 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A38B9FF16C8B3E8003EA214 /* AddressBook.framework */; };
 		9A9D7C5016C745C800F1FEA6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9D7C4F16C745C800F1FEA6 /* MapKit.framework */; };
 		9A9D7C5316C7460000F1FEA6 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9D7C5216C7460000F1FEA6 /* AddressViewController.m */; };
 		9A9D7C5516C758A600F1FEA6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9D7C5416C758A600F1FEA6 /* CoreLocation.framework */; };
@@ -73,6 +74,7 @@
 		9A20537A16A5F82300399FB0 /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
 		9A20537E16A5F99600399FB0 /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
 		9A20537F16A5F99600399FB0 /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
+		9A38B9FF16C8B3E8003EA214 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		9A9D7C4F16C745C800F1FEA6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9A9D7C5116C7460000F1FEA6 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
 		9A9D7C5216C7460000F1FEA6 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A38BA0016C8B3E8003EA214 /* AddressBook.framework in Frameworks */,
 				9A9D7C5516C758A600F1FEA6 /* CoreLocation.framework in Frameworks */,
 				9A9D7C5016C745C800F1FEA6 /* MapKit.framework in Frameworks */,
 				9A20534416A5F28800399FB0 /* UIKit.framework in Frameworks */,
@@ -102,6 +105,7 @@
 		9A20533416A5F28800399FB0 = {
 			isa = PBXGroup;
 			children = (
+				9A38B9FF16C8B3E8003EA214 /* AddressBook.framework */,
 				9A9D7C5416C758A600F1FEA6 /* CoreLocation.framework */,
 				9A9D7C4F16C745C800F1FEA6 /* MapKit.framework */,
 				9A20534916A5F28800399FB0 /* CHA */,

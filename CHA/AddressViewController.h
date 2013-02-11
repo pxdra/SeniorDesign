@@ -9,16 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CLLocation.h>
+#import <AddressBook/AddressBook.h>
 
 #import "Location.h"
 
 
-@interface AddressViewController : UIViewController <CLLocationManagerDelegate>
+@interface AddressViewController : UIViewController <CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *directionButton;
 @property (weak, nonatomic) IBOutlet UILabel *detailsLabel;
 @property (weak, nonatomic) IBOutlet UINavigationItem *titleBar;
+@property Boolean userLocUpdate;
 
 @property MKPointAnnotation * pin;
 @property Location* loc;
@@ -28,6 +30,8 @@
 
 
 - (void) setLoc:(Location *)loc;
-- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation;
+
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation;
 
 @end

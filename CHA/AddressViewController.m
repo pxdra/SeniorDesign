@@ -26,20 +26,24 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  _detailsLabel.numberOfLines = 0;
-  _detailsLabel.text = [_loc getDisc];
-  _titleBar.title = [_loc getName];
+
   CLLocationManager *locationManager = [[CLLocationManager alloc] init];
   locationManager.delegate = self;
   locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
   _pin = [[MKPointAnnotation alloc] init];
   NSArray* latArray = [_loc.getLocData componentsSeparatedByString:@","];
   CLLocation *pinLoc = [[CLLocation alloc] initWithLatitude:[(NSString*)[latArray objectAtIndex:0] doubleValue] longitude:[(NSString*)[latArray objectAtIndex:1] doubleValue]];
+  _detailsLabel.numberOfLines = 0;
+  _detailsLabel.text = [_loc getDisc];
+  _titleBar.title = [_loc getName];
   _pin.title =_loc.getName;
   _pin.subtitle = _loc.getAddress;
   _pin.coordinate = pinLoc.coordinate;
-    
+  self.userLocUpdate=true;
+  [self.mapView removeAnnotations:self.mapView.annotations];
+  [self.mapView setDelegate:self];
   [self.mapView addAnnotation:_pin];
+  [_directionButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
   
   [locationManager startUpdatingLocation];
 
@@ -61,57 +65,43 @@
 }
 
 - (void)recenterMap{
-  double minLatitude, maxLatitude, minLongitude, maxLongitude;
-  if (self.mapView.userLocation.coordinate.longitude > _pin.coordinate.longitude){
-    minLongitude = _pin.coordinate.longitude;
-    maxLongitude =self.mapView.userLocation.coordinate.longitude;
-  }
-  else
-  {
-    maxLongitude = _pin.coordinate.longitude;
-    minLongitude =self.mapView.userLocation.coordinate.longitude;
-  }
+  double deltaLat = fabs(_pin.coordinate.latitude - self.mapView.userLocation.coordinate.latitude);
+  double deltaLong = fabs(_pin.coordinate.longitude - self.mapView.userLocation.coordinate.longitude);
   
-  if (self.mapView.userLocation.coordinate.latitude > _pin.coordinate.latitude){
-    minLatitude = _pin.coordinate.latitude;
-    maxLatitude =self.mapView.userLocation.coordinate.latitude;
-  }
-  else
-  { 
-    maxLatitude = _pin.coordinate.latitude;
-    minLatitude =self.mapView.userLocation.coordinate.latitude;
-  }
-  MKCoordinateRegion region = self.mapView.region;
-  region.center.latitude = (minLatitude + maxLatitude) / 2;
-  region.center.longitude = (minLongitude + maxLongitude) / 2;
-  
-  region.span.latitudeDelta = (maxLatitude - minLatitude) * MAP_PADDING;
-  
-  //region.span.latitudeDelta = region.span.latitudeDelta;
-  
-  region.span.longitudeDelta = (maxLongitude - minLongitude) * MAP_PADDING;
-  
-  //MKCoordinateRegion scaledRegion = [self.mapView regionThatFits:region];
+  double centerLat = (_pin.coordinate.latitude + self.mapView.userLocation.coordinate.latitude)/2;
+  double centerLong = (_pin.coordinate.longitude + self.mapView.userLocation.coordinate.longitude)/2;
+  CLLocationCoordinate2D center;
+  center.longitude = centerLong;
+  center.latitude = centerLat;
+  MKCoordinateRegion region;
+  region.center = center;
+  MKCoordinateSpan span = MKCoordinateSpanMake(deltaLat*2, deltaLong*2);
+  region.span = span;
   [self.mapView setRegion:region animated:YES];
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)sender viewForAnnotation:(id < MKAnnotation >)annotation
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-  static NSString *reuseId = @"StandardPin";
-  MKPinAnnotationView *aView = (MKPinAnnotationView *)[sender dequeueReusableAnnotationViewWithIdentifier:reuseId];
-  if ([annotation isKindOfClass:[MKPointAnnotation class]]){
-    if (aView == nil)
-      aView = aView = (MKPinAnnotationView *)[sender dequeueReusableAnnotationViewWithIdentifier:reuseId];
-    [aView setPinColor:MKPinAnnotationColorRed];
-    aView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    aView.canShowCallout = YES;
-    aView.annotation = annotation;
-  }
-  if ([annotation isKindOfClass:[MKUserLocation class]]){
+  if (self.userLocUpdate){
     [self recenterMap];
-    return nil;
+    self.userLocUpdate = false;
   }
-  return aView;
+  //self.mapView.centerCoordinate = userLocation.location.coordinate;
 }
+
+- (void) buttonAction: (id) sender{
+  NSDictionary *addressDict = @{(NSString*)kABPersonAddressStreetKey : [_loc getAddress]};
+  MKPlacemark *placemark = [[MKPlacemark alloc]
+                            initWithCoordinate:_pin.coordinate
+                            addressDictionary:addressDict];
+  
+  MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+  mapItem.name =[_loc getName];
+  
+  NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+  [mapItem openInMapsWithLaunchOptions:launchOptions];
+}
+
+
 
 @end
