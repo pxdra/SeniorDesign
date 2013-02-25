@@ -11,6 +11,7 @@
 		724BA6D616C039AB00BCE3FA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 724BA6D516C039AB00BCE3FA /* icon.png */; };
 		727C90E816DA90AD0093E365 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 727C90E716DA90AD0093E365 /* Person.m */; };
 		727C90EB16DA90CB0093E365 /* GreenBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 727C90EA16DA90CB0093E365 /* GreenBox.m */; };
+		727C90ED16DAB4820093E365 /* Physicians.json in Resources */ = {isa = PBXBuildFile; fileRef = 727C90EC16DAB4810093E365 /* Physicians.json */; };
 		72E3061F16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72E3061E16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg */; };
 		9A20534416A5F28800399FB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534316A5F28800399FB0 /* UIKit.framework */; };
 		9A20534616A5F28800399FB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534516A5F28800399FB0 /* Foundation.framework */; };
@@ -50,6 +51,7 @@
 		727C90E716DA90AD0093E365 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		727C90E916DA90CB0093E365 /* GreenBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenBox.h; sourceTree = "<group>"; };
 		727C90EA16DA90CB0093E365 /* GreenBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenBox.m; sourceTree = "<group>"; };
+		727C90EC16DAB4810093E365 /* Physicians.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Physicians.json; sourceTree = "<group>"; };
 		72E3061E16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "childrens-orthopaedics-atlanta-logo.jpg"; sourceTree = "<group>"; };
 		9A20533F16A5F28800399FB0 /* CHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A20534316A5F28800399FB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -156,6 +158,7 @@
 				9AF04B9E16C711D8002087FD /* Location.m */,
 				9AF04B9716C70304002087FD /* LocationViewController.h */,
 				9AF04B9816C70304002087FD /* LocationViewController.m */,
+				727C90EC16DAB4810093E365 /* Physicians.json */,
 				9A20537A16A5F82300399FB0 /* Phone.png */,
 				9A20537816A5F79800399FB0 /* Twitter.png */,
 				9A20537616A5F58000399FB0 /* Fb.png */,
@@ -259,6 +262,7 @@
 				9A20537B16A5F82300399FB0 /* Phone.png in Resources */,
 				72E3061F16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg in Resources */,
 				724BA6D616C039AB00BCE3FA /* icon.png in Resources */,
+				727C90ED16DAB4820093E365 /* Physicians.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
