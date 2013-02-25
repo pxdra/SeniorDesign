@@ -319,6 +319,69 @@
                 "bullets" : ["Pulmonary function in children with muscular dystrophy", "Outcomes after hip surgery in adolescents and young adults", "Treatment of Perthes disease using core decompression and bone marrow aspirate", "Assessing femoral head perfusion in SCFE patients"]
             }
     ]
+ },{
+    "name" : "S. Clifton Willimon, M.D.",
+    "picString" : "willimonsamuel.png",
+    "paragraphs" : ["Dr. Cliff Willimon is an orthopaedic surgeon at Children's Orthopaedics of Atlanta. He specializes in disorders of the knee, hip, and shoulder as well as sports-related injuries to the elbow and ankle. In addition, he has a special interest in hip preservation in kids, adolescents and adults. Dr. Willimon also provides leadership at Children's Healthcare of Atlanta as the Medical Director of Sports Medicine Research and Outcomes.",
+    "Dr. Willimon is a native of LaGrange, Georgia. Following high school, he graduated summa cumme laude from Wofford College. While at Wofford, he was distinguished with selection to the Phi Beta Kappa Honor Society, as well as a student government. Following his undergraduate studies, Dr. Willimon completed medical school at Emory University where he was named to the Alpha Omega Alpha Honor Society, which he served as president as a senior medical student.",
+    "Dr. Willimon’s orthopaedic training was completed at Duke University Medical Center. While at Duke, he served as a resident team physician for Duke University Athletics, North Carolina Central University and Hillside High School.",
+    "After serving as a Chief Resident at Duke, he pursued further specialized training at the prestigious Steadman Clinic and Steadman Philippon Research Institute in Vail, Colorado. In Vail, he trained under leaders in sports medicine including Doctors Marc Philippon, Richard Steadman, Peter Millett, Robert LaPrade and William Sterett. He learned advanced arthroscopic and reconstructive surgery techniques for the treatment of complex disorders of the hip, knee, and shoulder, as well as all sports-related injuries. While in Vail, Dr. Willimon cared for professional athletes from the NFL, MLB, NHL, ATP/WTA, and PGA tours, as well as collegiate, high school, and recreational athletes. Recently, Dr. Willimon served as the team physician for the US Women’s Alpine Team at the Audi FIS Ski World Cup Competition in St. Moritz, Switzerland. In addition, Dr. Willimon was a medical provider for the Audi Bird’s of Prey World Cup Ski Race in Beaver Creek, Colorado and the Dew Tour Ski and Snowboard Competition in Breckenridge, Colorado.",
+    "Throughout his training, Dr Willimon has performed orthopaedic research. He has been published in peer-reviewed journals, written book chapters and review articles, as well as produced instructional surgical videos. His work has been presented at multiple national meetings.",
+    "He is also a member of numerous academic societies including the American Academy of Orthopaedic Surgeons, the American Orthopaedic Society for Sports Medicine, the Arthroscopy Association of North America and the Piedmont Society.",
+    "Dr. Willimon and his wife have two children. When not spending time with his family, Dr. Willimon enjoys many outdoor pursuits including golfing, fishing and skiing.",
+    "Dr. Willimon sees patients at the following locations: Fayette, Duluth , Marietta and Meridian Mark."],
+    "greenBoxes" : [
+            {
+                "title" : "Education",
+                "bullets" : ["College: Wofford College, 2001", "Medical School: Emory University, 2005", "Orthopaedic Surgery Residency: Duke University, 2010", "Fellowship: Knee, Shoulder, and hip Sports Medicine Fellowship, The Steadman Clinic and Steadman-Philippon Research Institute, 2011"]
+            },{
+                "title" : "Hospital Affiliations",
+                "bullets" : ["Children's Healthcare of Atlanta at Scottish Rite", "Children's Healthcare of Atlanta at Egleston", "Northside Hospital"]
+            },{
+                "title" : "Board Certifications",
+                "bullets" : ["Board Eligible - American Board of Orthopaedic Surgery", "Certified Principal Investigator"]
+            },{
+                "title" : "Licensure",
+                "bullets" : ["Medical License - State of Georgia"]
+            },{
+                "title" : "Professional Affiliations",
+                "bullets" : ["American Academy of Orthopaedic Surgeons", "American Orthopaedic Society of Sports Medicine", "Arthroscopy Association of North America", "Piedmont Orthopaedic Society", "Association of Clinical Research Professionals", "Alpha Omega Alpha Medical Honor Society"]
+            },{
+                "title" : "Areas of Clinical Interest",
+                "bullets" : ["Arthroscopic Surgery", "Complex Hip Arthroscopy", "Complex Knee Ligament and Cartilage Reconstruction", "Shoulder Dislocations", "Sports-related injuries", "Orthopaedic Trauma"]
+            },{
+                "title" : "Current Research Interests",
+                "bullets" : ["ACL reconstructions in children and adolescents", "Hip arthroscopy in adolescents", "Microfracture in the growing knee", "Femeroacetabular impingement (FAI)", "Arthroscopic suture fixation of tibial spine fractures", "Evidence-based sports medicine"]
+            }
+    ]
+ },{
+    "name" : "J. Stephen Kroll, M.D.",
+    "picString" : "stephen-kroll-profile.jpg",
+    "paragraphs" : ["Dr. Stephen Kroll began his education at West Virginia University. While studying at WVU, he graduated Cum Laude with a B.A. in Biology and Magna Cum Laude with a B.S. in Exercise Physiology. He then earned his Medical Doctorate at WVU as well. Before leaving WVU, he completed a Pediatric Residency and then went onto the University of South Carolina to complete a Sports Medicine Fellowship.",
+    "Dr. Kroll provided multiple teams in West Virginia and South Carolina with Sports Medicine physician coverage including the University of South Carolina Football, M/W Basketball, M/W Soccer, Volleyball, Baseball, Softball, M/W Track, M/W Swimming and Diving, M/W Tennis, M/W Golf, Equestrian and Cheerleading teams. More recently from 2009 through 2012, he provided coverage for Dacula, North Gwinnett and Lanier High Schools and was also a participating team physician for the All Sports Georgia High School State Wrestling Tournaments.",
+    "Before coming to COA in 2012, Dr. Kroll practiced at Georgia Sports Medicine in Gwinnett since 2009. He has been featured on CNN and Channel 5 Atlanta discussing the diagnosis, treatment and improvements in management of Concussions.",
+    "He sees patients at the following locations:  Meridian Mark and Forsyth"],
+    "greenBoxes" : [
+            {
+                "title" : "Education",
+                "bullets" :["College: West Virginia University, 1998 & 1999", "Medical School: West Virginia University, 2005","Pediatric Residency: West Virginia University, 2008","Sports Medicine Fellowship: University of South Carolina, 2009"]
+            },{
+                "title" : "Licensure",
+                "bullets" : ["Medical License – State of Georgia"]
+            },{
+                "title" : "Professional Affiliations",
+                "bullets" : ["American Academy of Pediatrics","American Medical Society for Sports Medicine"]
+            },{
+                "title" : "Areas of Clinical Interest",
+                "bullets" : ["Sports Medicine","Musculoskeletal Injuries","Concussions"]
+            },{
+                "title" : "Personal Interests",
+                "bullets" : ["Playing the guitar and piano","Exercising and being active","Spending time with family and friends"]
+            },{
+                "title" : "Board Certifications",
+                "bullets" : ["American Board of Pediatrics"]
+            }
+    ]
  }
 ]
 
