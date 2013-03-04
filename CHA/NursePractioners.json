@@ -1,0 +1,78 @@
+[
+	{
+		"name" : "Stephanie Detamore de Jager, CPNP",
+		"picString" : "stephanieathre.png",
+		"paragraphs:" : ["Stephanie attended Angelo State University in Texas where she obtained her Bachelors of Science in Nursing Degree. In 2004, Stephanie obtained a Masters of Science in Nursing, Pediatric Nurse Practitioner Degree from the University of Texas, Arlington. She has specialized in Pediatric Nursing for over 16 years, specifically in the areas of trauma and orthopaedics.",
+		"She is certified by the Pediatric National Certification Board. She is an active member of the Pediatric Orthopaedic Practitioner Society and the National Association of Pediatric Nurse Practitioners, where she is currently the Vice President for the Statewide Chapter. In this role, Stephanie secures the speakers for the monthly organization meetings and arranges for PNPs involved in the group to speak all over the state providing CEU credits to other nurses. She also coordinates all of the chapter's philanthropic activities.",
+		"Stephanie comes to Children’s Orthopaedics of Atlanta (COA) from the Orthopaedics Department at Children’s Medical Center Dallas where she worked for over five years. In her role, Stephanie was active in research, investigating supracondylar humerus fractures and the injuries that cause them. She was also active in research investigating MRSA infections and their treatment in the pediatric population.",
+		"Also while in Dallas, she worked with her colleagues to establish the Pediatric Orthopaedics Practitioner Society (POPS), underneath the Pediatric Orthopaedic Society of North America (POSNA). This organization works to bring orthopaedic practitioners from all over the world together for a yearly education conference. It also offers an avenue for education, networking, and partnership with other physician extenders to improve their contribution in the pediatric orthopaedic arena.",
+		"Stephanie joined the COA team in July of 2007. She currently covers the emergency room at Children’s Healthcare of Atlanta at Scottish Rite where she assesses orthopaedic emergencies and performs fracture reductions under guidance from the surgeons of COA. In addition, Stephanie assists our COA surgeons with management and education of patients and their families during their hospitalizations at both Children’s at Scottish Rite and Egleston campuses."],
+		"greenBoxes" : [
+			{
+				"title" : "Education",
+				"bullets": ["Undergraduate: Angelo State University", "Graduate: University of Texas at Arlington - Master of Science - Nursing"]
+			},{
+				"title" : "Licensure",
+				"bullets" : ["Certified Pediatric Nurse Practitioner","Registered Nurse","Pediatric Advanced Life Support"]
+			},{
+				"title" : "Professional Affiliations",
+				"bullets" : ["Pediatric Orthopaedics Practitioner Society","National Association of Orthopaedic Nurses","National Association of Pediatric Nurse Associates and Practitioners"]
+			},{
+				"title" : "Areas of Clinical Interest",
+				"bullets" : ["Treatment of pediatric fractures","Evaluation and treatment of pediatric musculoskeletal infections","Post-operative inpatient care"]
+			}
+		]
+	},
+	{
+		"name" : "Veronica Hill, CPNP",
+		"picString" : "veronica-hill.jpg",
+		"paragraphs" : ["Veronica received her Masters of Science in Nursing, Pediatric Nurse Practitioner degree from Georgia State University. She has specialized in pediatric nursing for over 20 years.",
+		"She is certified by the Pediatric National Certification Board. She is an active member of the National Association of Pediatric Nurse Practitioners. She recently attended the national conference by NAON, National Association of Orthopaedic Nurses, with classes focused on spinal deformities.",
+		"Veronica works on the spinal team with Dr. Dennis P. Devito who runs the COA spine program that specializes in the treatment of scoliosis and other spinal deformities. She enjoys helping families and educating families regarding scoliosis management. She has personal experience with the diagnosis of scoliosis; her daughter has scoliosis which required a spinal fusion.",
+		"Veronica sees patients at: Meridian Mark, Duluth, and Alpharetta."],
+		"greenBoxes" : [
+			{
+				"title" : "Education",
+				"bullets" : ["Graduate: Georgia State University - Master of Science - Nursing"]
+			}
+		]
+	},{
+		"name" : "Kirsten Warnock, NP-C",
+		"picString" : "kirsten-warnock.jpg",
+		"paragraphs" : ["Kirsten received her Bachelors of Science degree from Vanderbilt University where she double-majored in Child Development and Spanish. She spent a semester abroad in Madrid, Spain, where she honed her Spanish skills and learned to speak the language fluently. At Vanderbilt, Kirsten also participated in club lacrosse, field hockey and rode competitively on the equestrian team.",
+		"After graduating with honors and magna cum laude from Vanderbilt, Kirsten moved to Atlanta to pursue her nurse practitioner degree at Emory University. While in school, she completed a competitive nurse externship at the Shepherd Center, a catastrophic care hospital in Atlanta. Additionally, she volunteered regularly at an urban non-profit clinic run by nurse practitioners that provides free healthcare to the homeless and uninsured. Kirsten also volunteered in the fields of South Georgia delivering primary and urgent healthcare to the migrant farm workers.",
+		"Kirsten graduated at the top of her class from Emory’s Family Nurse Practitioner program and was inducted into the Sigma Theta Tau International Honorary Nursing Society. She is a board certified member of the American Academy of Nurse Practitioners.",
+		"Kirsten is originally from Baltimore, MD, where she cultivated her love for sports as a young athlete playing four varsity seasons of lacrosse, field hockey and soccer. After college, she coached girls’ lacrosse at Westminster in Atlanta.",
+		"In her spare time, Kirsten and her husband enjoy traveling, cooking and taking their Australian cattle dog to the park."],
+		"greenBoxes" : [
+			{
+				"title" : "Education",
+				"bullets" : ["Undergraduate: Vanderbilt University","Graduate: Emory University"]
+			},{
+				"title" : "Licensure",
+				"bullets" : ["Certified Family Nurse Practitioner","Registered Nurse"]
+			},{
+				"title" : "Professional Affiliations",
+				"bullets" : ["American Association of Nurse Practitioners"]
+			},{
+				"title" : "Areas of Clinical Interest",
+				"bullets" : ["Orthopaedic trauma","Sports-related injuries"]
+			}
+		]
+	}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

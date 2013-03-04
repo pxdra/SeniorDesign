@@ -1,0 +1,52 @@
+[
+	{
+		"name" : "David Kloehs, AT-C",
+		"picString" : "davidkloehs.png",
+		"paragraphs" : ["David Kloehs, a Certified Athletic Trainer, joined Children's Orthopaedics of Atlanta (COA) as a physician extender for Dr. Marshall. In the role of a physician extender, David assists Dr. Marshall with the assessment of injuries, MRI call backs, and a direct line of communication for local athletic trainers.",
+		"Before arriving at COA, David earned a Bachelors of Education from the University of Louisville and a Masters of Education from the University of Houston. David served as an assistant athletic trainer at Georgia Tech for almost six years. While at Georgia Tech, he was primarily responsible for the healthcare of the track and field and cross country teams.",
+		"Prior to working at Georgia Tech, David had a brief stint with Children's Healthcare of Atlanta. There he worked as the athletic trainer for Northview High School in Duluth, Georgia. In addition, David has also served as the Head Athletic Trainer for Houston Baptist University in Houston, Texas."],
+		"greenBoxes" : [
+			{
+				"title" : "Education",
+				"bullets" : ["Undergraduate: University of Louisville","Graduate: University of Houston - Masters of Education – Sports Administration"]
+			},{
+				"title" : "Licensure",
+				"bullets" : ["NATABOC – Certified Athletic Trainer","Georgia State License"]
+			},{
+				"title" : "Professional Affiliations",
+				"bullets" : ["National Athletic Trainers Association","Southeast Athletic Trainers Association","Georgia Athletic Trainers Association"]
+			},{
+				"title" : "Areas of Clinical Interest",
+				"bullets" : ["Sports Injuries"]
+			},{
+				"title" : "Supervising Physician",
+				"bullets" : ["David Marshall, MD"]
+			}
+		]
+	},{
+		"name" : "Melissa Leake, AT-C",
+		"picString" : "melissaleake.png",
+		"paragraphs" : ["Melissa attended University of Michigan in Ann Arbor, where she obtained her Bachelors of Science in Kinesiology with a concentration in Athletic Training. She became a board certified athletic trainer in 2008. Then she completed a graduate assistantship at the University of Kentucky and she obtained a Masters of Science in Athletic Training.",
+		"During her time with the Kentucky Wildcats, she worked primarily with the men's and women's varsity cross-country and track and field teams while completing her Master's thesis.",
+		"Immediately following school, Melissa was accepted to a year-long athletic training fellowship at the Steadman Clinic in Vail, Colorado. During her time there, Melissa participated in sports medicine research, worked closely with the orthopaedic surgeons, and worked event coverage including: the Mountain Dew Action Sports Summer and Winter tours, Goretex Transrockies run, and Vail recreation district mountain bike summer race series.",
+		"As a native of Marietta, Melissa returned to Georgia in the summer of 2011 to join Children’s Orthopaedics of Atlanta and Children’s Healthcare of Atlanta as a joint employee in the Sports Medicine Program. She assists orthopaedic surgeon, Dr. S. Clifton Willimon, in his practice as well as helping to build a research foundation with Children’s Healthcare of Atlanta. She looks forward to enhancing the lives of children with excellent patient care and research."],
+		"greenBoxes" : [
+			{
+				"title" : "Education",
+				"bullets" : ["Undergraduate: University of Michigan","Graduate: University of Kentucky - Masters of Science, Athletic Training","Fellowship: Steadman Clinic – Vail, CO"]
+			},{
+				"title" : "Licensure",
+				"bullets" : ["NATABOC Certified Athletic Trainer","NBOTC Certified Orthopaedic Technologist","Licensed athletic trainer in GA"]
+			},{
+				"title" : "Professional Affiliations",
+				"bullets" : ["National Athletic Trainers Association"]
+			},{
+				"title" : "Areas of Clinical Interest",
+				"bullets" : ["Treatment of Athletic Injuries","Sports Medicine Research"]
+			},{
+				"title" : "Supervising Physician",
+				"bullets" : ["S. Clifton Willimon, M.D."]
+			}
+		]
+	}
+]
