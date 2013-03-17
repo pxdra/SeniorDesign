@@ -22,7 +22,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UTS-8N-hwE" kind="push" id="bNo-hQ-XmB"/>
+                                    <segue destination="UTS-8N-hwE" kind="push" id="6GV-Ic-rR5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hID-Fx-Wj9">
@@ -1092,7 +1092,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWP-QB-gNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="501" y="-1333"/>
+            <point key="canvasLocation" x="673" y="-1295"/>
         </scene>
         <!--Make Appointment View Controller - Make an Appointment-->
         <scene sceneID="Cgt-Oe-Iah">
@@ -1296,7 +1296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4te-1U-N9K" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="-1340"/>
+            <point key="canvasLocation" x="299" y="-1270"/>
         </scene>
     </scenes>
     <resources>

@@ -48,6 +48,10 @@
     self.mobilePhone = @"";
     self.contactEmail = @"";
     self.preferredDate = @"";
+ 
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                    style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.navigationItem.rightBarButtonItem = rightButton;
     
 //    self.newPatient = @"";
 }
