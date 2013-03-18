@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
+#import "GreenBox.h"
 
 @interface PersonDetailViewController : UIViewController
+@property Person* person;
 
 @end

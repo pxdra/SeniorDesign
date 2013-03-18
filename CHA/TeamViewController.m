@@ -26,6 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [_Physicians addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_PAs addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_Nurses addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_CATs addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,88 +38,35 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void) buttonAction: (id) sender{
+  if (sender == _Physicians){
+    _selectedType=@"Physicians";
+  }
+  else if (sender == _PAs){
+    _selectedType=@"Physician Assistants";
+  }
+  else if (sender == _Nurses){
+    _selectedType=@"Nurse Practioners";
+  }
+  else if (sender == _CATs){
+    _selectedType=@"Certified Athletic Trainers";
+  }
+  [self performSegueWithIdentifier:@"personListSegue" sender:self];
+}
+
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  UIViewController* destination = [segue destinationViewController];
+  if([destination isKindOfClass: [PersonViewController class]]) {
+    PersonViewController* upcomingDataView = [segue destinationViewController];
+    [upcomingDataView setType:_selectedType];
+  }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
-
 @end

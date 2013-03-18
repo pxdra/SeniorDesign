@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PersonViewController.h"
 
 @interface TeamViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIButton *Physicians;
+@property (weak, nonatomic) IBOutlet UIButton *PAs;
+@property (weak, nonatomic) IBOutlet UIButton *Nurses;
+@property (weak, nonatomic) IBOutlet UIButton *CATs;
 
+@property NSString* selectedType;
 @end

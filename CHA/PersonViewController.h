@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
+#import "PersonDetailViewController.h"
+#import "GreenBox.h"
 
-@interface PersonViewController : UIViewController
+@interface PersonViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property NSArray* tableData;
+@property Person* selectedPerson;
+@property NSString* type;
+
+-(NSArray*)getJSONArray:(NSString*)fileName;
 @end

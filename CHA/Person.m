@@ -14,6 +14,8 @@
 {
     name = inName;
     picString = inPicString;
+    paragraphs = [[NSMutableArray alloc] init];
+    greenBoxes = [[NSMutableArray alloc] init];
     return self;
 }
 - (NSString *) getName
