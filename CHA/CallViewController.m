@@ -61,14 +61,12 @@
     UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:question delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES",nil];
     [alert setTag:1];
     [alert show];
-//    [alert release];
 }
 -(IBAction)buttonAction2
 {
     NSString * question = @"Call Concussion Hotline: 678-686-6867";
     UIAlertView *alert2=[[UIAlertView alloc]initWithTitle:@"" message:question delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES",nil];
     [alert2 show];
-//    [alert release];
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
