@@ -423,16 +423,21 @@ NSMutableArray *locationNames2;
 -(IBAction)buttonAction1
 {
     NSLog(@"Pressed done.");
-    NSLog(fname);
-    NSLog(lname);
-    NSLog(dob);
-    NSLog(reason);
-    NSLog(referrer); // 5
-    NSLog(contact);
-    NSLog(relationship);
-    NSLog(cPhone);
-    NSLog(mPhone);
-    NSLog(email); // 10
+    NSLog(fname!=nil && fname.length > 0 ? @"Valid" : @"Invalid");
+    NSLog(lname!=nil && lname.length > 0 ? @"Valid" : @"Invalid");
+    NSLog(dob!=nil && dob.length > 0 ? @"Valid" : @"Invalid");
+    NSLog(reason!=nil && reason.length > 0 ? @"Valid" : @"Invalid");
+    NSLog(referrer!=nil && referrer.length > 0 ? @"Valid" : @"Invalid");
+    NSLog(contact!=nil && contact.length > 0 ? @"Valid" : @"Invalid");
+    NSLog(relationship!=nil && relationship.length > 0 ? @"Valid" : @"Invalid");
+    NSLog(cPhone!=nil && cPhone.length > 0 ? @"Valid" : @"Invalid");
+    NSLog(mPhone!=nil && mPhone.length > 0 ? @"Valid" : @"Invalid");
+    NSLog(email!=nil && email.length > 0 ? @"Valid" : @"Invalid");
+}
+
+-(NSString*) notEmpty: (NSString *)field
+{
+    return field!=nil && field.length > 0 ? @"Valid" : @"Invalid";
 }
 
 - (void)didReceiveMemoryWarning
