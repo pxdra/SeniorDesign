@@ -17,6 +17,7 @@ UISegmentedControl *newPatientSegment;
 UISegmentedControl *locationSegment;
 UISegmentedControl *locationSegment2;
 UISegmentedControl *xraySegment;
+UISegmentedControl *timeSegment;
 NSString* fname;
 NSString* lname;
 NSString* dob;
@@ -31,6 +32,9 @@ NSString* email;
 NSString* preferredLocation;
 NSString* newPatient;
 NSString* xrayTaken;
+NSString* preferredDate ;
+NSString* preferredTime;
+NSString* additionalInformation ;
 
 UITextField *fname_;
 UITextField *lname_;
@@ -51,6 +55,7 @@ NSMutableArray *placeholderArray;
 NSMutableArray *patientTitleArray;
 NSMutableArray *locationNames;
 NSMutableArray *locationNames2;
+NSMutableArray *timeArray;
 
 @implementation Appointment2ViewController
 
@@ -74,7 +79,7 @@ NSMutableArray *locationNames2;
                                                                    target:self
                                                                    action: @selector(buttonAction1)];
     self.navigationItem.rightBarButtonItem = rightButton;
-    NSLog(@"float value is: %f", self.view.frame.size.height);
+//    NSLog(@"float value is: %f", self.view.frame.size.height);
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,
                                                                 self.view.frame.size.height)];
     NSInteger viewcount = 3;
@@ -92,7 +97,7 @@ NSMutableArray *locationNames2;
     
     UILabel *first = [[UILabel alloc] initWithFrame:CGRectMake(10, 90, 300, 30)];
     first.font = [UIFont systemFontOfSize:14];
-    first.text = @"Patient Information";
+    first.text = @"Patient Information [REQUIRED]";
     first.backgroundColor = maroonBG;
     [first setLineBreakMode:(NSLineBreakByWordWrapping)];
     first.numberOfLines = 2;
@@ -114,6 +119,7 @@ NSMutableArray *locationNames2;
     patientTitleArray = [[NSMutableArray alloc] initWithObjects:@"First name", @"Last name", @"Child DOB",
                          @"Reason", @"Referrer", @"Contact person", @"Relationship",
                          @"Contact phone #", @"Mobile phone #", @"Contact email",nil];
+    timeArray = [[NSMutableArray alloc] initWithObjects:@"First Available", @"AM", @"PM", nil];
     
     
     NSArray *buttonNames = [NSArray arrayWithObjects:
@@ -196,7 +202,24 @@ NSMutableArray *locationNames2;
     preferred_.delegate = self;
     [scrollView addSubview:preferred_];
     
-    UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+30, 300, 60)];
+    UILabel *label15 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+30, 300, 30)];
+    label15.textAlignment = NSTextAlignmentCenter;
+    label15.font = [UIFont systemFontOfSize:14];
+    label15.text = @"Preferred Time?";
+    [label15 setLineBreakMode:(NSLineBreakByWordWrapping)];
+    label15.numberOfLines = 5;
+    label15.backgroundColor = [UIColor clearColor];
+    [scrollView addSubview:label15];
+    
+    timeSegment = [[UISegmentedControl alloc]
+                         initWithItems:timeArray];
+    timeSegment.frame = CGRectMake(10, 230+560+30+30, 300, 30);
+    timeSegment.momentary = NO;
+    [timeSegment addTarget:self action:@selector(timeAction:) forControlEvents:UIControlEventValueChanged];
+    timeSegment.segmentedControlStyle = UISegmentedControlStyleBar;
+    [scrollView addSubview:timeSegment];
+    
+    UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+90, 300, 60)];
     label5.textAlignment = NSTextAlignmentCenter;
     label5.font = [UIFont systemFontOfSize:14];
     label5.text = @"***We are not contracted with Peachstate or out of state Medicaid";
@@ -205,7 +228,7 @@ NSMutableArray *locationNames2;
     label5.backgroundColor = [UIColor clearColor];
     [scrollView addSubview:label5];
     
-    UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+90, 300, 30)];
+    UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(10, 290+560+90, 300, 30)];
     label6.textAlignment = NSTextAlignmentCenter;
     label6.font = [UIFont systemFontOfSize:14];
     label6.text = @"Have x-rays been taken?";
@@ -216,13 +239,13 @@ NSMutableArray *locationNames2;
     
     xraySegment = [[UISegmentedControl alloc]
                    initWithItems:buttonNames];
-    xraySegment.frame = CGRectMake(10, 230+560+120, 300, 30);
+    xraySegment.frame = CGRectMake(10, 290+560+120, 300, 30);
     xraySegment.momentary = NO;
     [xraySegment addTarget:self action:@selector(xrayAction:) forControlEvents:UIControlEventValueChanged];
     xraySegment.segmentedControlStyle = UISegmentedControlStyleBar;
     [scrollView addSubview:xraySegment];
     
-    UILabel *label7 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+150, 300, 30)];
+    UILabel *label7 = [[UILabel alloc] initWithFrame:CGRectMake(10, 290+560+150, 300, 30)];
     label7.textAlignment = NSTextAlignmentCenter;
     label7.font = [UIFont systemFontOfSize:14];
     label7.text = @"If yes please bring them to your appointment.";
@@ -231,7 +254,7 @@ NSMutableArray *locationNames2;
     label7.backgroundColor = [UIColor clearColor];
     [scrollView addSubview:label7];
     
-    UILabel *label8 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+180, 300, 30)];
+    UILabel *label8 = [[UILabel alloc] initWithFrame:CGRectMake(10, 290+560+180, 300, 30)];
     label8.textAlignment = NSTextAlignmentCenter;
     label8.font = [UIFont systemFontOfSize:14];
     label8.text = @"Additional Information";
@@ -240,7 +263,7 @@ NSMutableArray *locationNames2;
     label8.backgroundColor = [UIColor clearColor];
     [scrollView addSubview:label8];
     
-    additional_ = [[UITextField alloc] initWithFrame:CGRectMake(10, 230+560+210, 300, 100)];
+    additional_ = [[UITextField alloc] initWithFrame:CGRectMake(10, 290+560+210, 300, 100)];
     additional_.placeholder = @"\tAdditional information";
     additional_.backgroundColor = [UIColor whiteColor];
     [additional_.layer setCornerRadius:5.0f]; //rounded corners
@@ -252,7 +275,7 @@ NSMutableArray *locationNames2;
     additional_.delegate = self;
     [scrollView addSubview:additional_];
     
-    UILabel *label9 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+210+100, 300, 90)];
+    UILabel *label9 = [[UILabel alloc] initWithFrame:CGRectMake(10, 290+560+210+100, 300, 90)];
     label9.textAlignment = NSTextAlignmentCenter;
     label9.font = [UIFont systemFontOfSize:14];
     label9.text = @"A member of our scheduling team will contact you by 5 PM unless request is received after 3 PM, in which case you will be contacted on the next business day.";
@@ -284,11 +307,11 @@ NSMutableArray *locationNames2;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    NSLog(@"text field should return");
-    if(textField.text.length < 1)
-        NSLog(@"Oops still empty string");
-    else
-        NSLog(textField.text);
+//    NSLog(@"text field should return");
+//    if(textField.text.length < 1)
+//        NSLog(@"Oops still empty string");
+//    else
+//        NSLog(textField.text);
     [textField resignFirstResponder];
     return YES;
 }
@@ -313,6 +336,10 @@ NSMutableArray *locationNames2;
         relationship = textField.text;
     else if(textField == mPhone_)
         mPhone = textField.text;
+    else if(textField == preferred_)
+        preferredDate = textField.text;
+    else if(textField == additional_)
+        additionalInformation = textField.text;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -397,6 +424,17 @@ NSMutableArray *locationNames2;
     NSLog([segmentedControl selectedSegmentIndex] == 0 ? @"Yes" : @"No");
 }
 
+-(IBAction) timeAction:(id)sender
+{
+    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+    switch([segmentedControl selectedSegmentIndex])
+    {
+        case 0: preferredTime = @"First available"; break;
+        case 1: preferredTime = @"AM" ; break;
+        case 2: preferredTime = @"PM" ; break;
+    }
+}
+
 -(IBAction) xrayAction:(id)sender
 {
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
@@ -416,23 +454,40 @@ NSMutableArray *locationNames2;
     {
         [locationSegment setSelectedSegmentIndex:UISegmentedControlNoSegment];
     }
-    NSLog(preferredLocation);
+//    NSLog(preferredLocation);
     
 }
 
 -(IBAction)buttonAction1
 {
     NSLog(@"Pressed done.");
-    NSLog(fname!=nil && fname.length > 0 ? @"Valid" : @"Invalid");
-    NSLog(lname!=nil && lname.length > 0 ? @"Valid" : @"Invalid");
-    NSLog(dob!=nil && dob.length > 0 ? @"Valid" : @"Invalid");
-    NSLog(reason!=nil && reason.length > 0 ? @"Valid" : @"Invalid");
-    NSLog(referrer!=nil && referrer.length > 0 ? @"Valid" : @"Invalid");
-    NSLog(contact!=nil && contact.length > 0 ? @"Valid" : @"Invalid");
-    NSLog(relationship!=nil && relationship.length > 0 ? @"Valid" : @"Invalid");
-    NSLog(cPhone!=nil && cPhone.length > 0 ? @"Valid" : @"Invalid");
-    NSLog(mPhone!=nil && mPhone.length > 0 ? @"Valid" : @"Invalid");
-    NSLog(email!=nil && email.length > 0 ? @"Valid" : @"Invalid");
+    BOOL b = newPatient!=nil && newPatient.length > 0;
+    b &= fname!=nil && fname.length > 0;
+    b &= lname!=nil && lname.length > 0;
+    b &= dob!=nil && dob.length > 0;
+    b &= reason!=nil && reason.length > 0;
+    b &= referrer!=nil && referrer.length > 0;
+    b &= contact!=nil && contact.length > 0;
+    b &= relationship!=nil && relationship.length > 0;
+    b &= cPhone!=nil && cPhone.length > 0;
+    b &= mPhone!=nil && mPhone.length > 0;
+    b &= email!=nil && email.length > 0;
+//    b &= preferredLocation!=nil && preferredLocation.length > 0;
+//    b &= preferredDate!=nil && preferredDate.length>0;
+    if(b == TRUE)
+        NSLog(@"All okay!");
+    else
+        NSLog(@"Something's amiss...");
+//    NSLog(fname!=nil && fname.length > 0 ? @"Valid" : @"Invalid");
+//    NSLog(lname!=nil && lname.length > 0 ? @"Valid" : @"Invalid");
+//    NSLog(dob!=nil && dob.length > 0 ? @"Valid" : @"Invalid");
+//    NSLog(reason!=nil && reason.length > 0 ? @"Valid" : @"Invalid");
+//    NSLog(referrer!=nil && referrer.length > 0 ? @"Valid" : @"Invalid");
+//    NSLog(contact!=nil && contact.length > 0 ? @"Valid" : @"Invalid");
+//    NSLog(relationship!=nil && relationship.length > 0 ? @"Valid" : @"Invalid");
+//    NSLog(cPhone!=nil && cPhone.length > 0 ? @"Valid" : @"Invalid");
+//    NSLog(mPhone!=nil && mPhone.length > 0 ? @"Valid" : @"Invalid");
+//    NSLog(email!=nil && email.length > 0 ? @"Valid" : @"Invalid");
 }
 
 -(NSString*) notEmpty: (NSString *)field
