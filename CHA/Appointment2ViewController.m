@@ -133,8 +133,8 @@ NSMutableArray *timeArray;
     [scrollView addSubview:newPatientSegment];
     
     UITableView *patientTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 190, 300, 440) style:UITableViewStylePlain];
-    patientTableView.delegate = self; // not sure if needed
-    patientTableView.dataSource = self; // definitely needed
+    patientTableView.delegate = (id)self; // not sure if needed
+    patientTableView.dataSource = (id)self; // definitely needed
     [scrollView addSubview:patientTableView];
     
     UILabel *second = [[UILabel alloc] initWithFrame:CGRectMake(10, 200+440, 300, 30)];
