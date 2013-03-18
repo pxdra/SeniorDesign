@@ -14,6 +14,9 @@
 
 UIScrollView *scrollView;
 UISegmentedControl *newPatientSegment;
+UISegmentedControl *locationSegment;
+UISegmentedControl *locationSegment2;
+UISegmentedControl *xraySegment;
 NSString* fname;
 NSString* lname;
 NSString* dob;
@@ -24,6 +27,10 @@ NSString* relationship;
 NSString* cPhone; // contact Phone
 NSString* mPhone; // mobile Phone
 NSString* email;
+
+NSString* preferredLocation;
+NSString* newPatient;
+NSString* xrayTaken;
 
 UITextField *fname_;
 UITextField *lname_;
@@ -36,9 +43,14 @@ UITextField* cPhone_; // contact Phone
 UITextField* mPhone_; // mobile Phone
 UITextField* email_;
 
+UITextField * preferred_;
+UITextField *additional_;
+
 NSMutableArray *yourItemsArray;
 NSMutableArray *placeholderArray;
 NSMutableArray *patientTitleArray;
+NSMutableArray *locationNames;
+NSMutableArray *locationNames2;
 
 @implementation Appointment2ViewController
 
@@ -55,30 +67,43 @@ NSMutableArray *patientTitleArray;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UIColor * maroonBG = [UIColor colorWithRed:74/255.0f green:30/255.0f blue:40/255.0f alpha:1.0f];
+    // text.borderStyle = UITextBorderStyleRoundedRect;
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
                                                                     style:UIBarButtonItemStyleDone
                                                                    target:self
                                                                    action: @selector(buttonAction1)];
     self.navigationItem.rightBarButtonItem = rightButton;
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    NSInteger viewcount = 2;
+    NSLog(@"float value is: %f", self.view.frame.size.height);
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,
+                                                                self.view.frame.size.height)];
+    NSInteger viewcount = 3;
     scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height *viewcount);
     [self.view addSubview:scrollView];
     
-    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10,0,300,100)];
+    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10,0,300,90)];
     label1.font = [UIFont systemFontOfSize:14];
     label1.text = @"If this is an emergency do NOT use this appointment request form. Instead, please go to the emerency room or use the numbers in the \"Call Us\" tab below.";
     [label1 setLineBreakMode:(NSLineBreakByWordWrapping)];
     label1.numberOfLines = 5;
     label1.backgroundColor = [UIColor clearColor];
-
+    
     [scrollView addSubview:label1];
     
-    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 300, 200)];
+    UILabel *first = [[UILabel alloc] initWithFrame:CGRectMake(10, 90, 300, 30)];
+    first.font = [UIFont systemFontOfSize:14];
+    first.text = @"Patient Information";
+    first.backgroundColor = maroonBG;
+    [first setLineBreakMode:(NSLineBreakByWordWrapping)];
+    first.numberOfLines = 2;
+    first.textColor = [UIColor whiteColor];
+    [scrollView addSubview:first];
+    
+    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 90+30, 300, 30)];
     label2.font = [UIFont systemFontOfSize:14];
     label2.text = @"Is your child new to our practice?";
     [label2 setLineBreakMode:(NSLineBreakByWordWrapping)];
-    label2.numberOfLines = 50;
+    label2.numberOfLines = 5;
     label2.backgroundColor = [UIColor clearColor];
     [scrollView addSubview:label2];
     
@@ -87,44 +112,159 @@ NSMutableArray *patientTitleArray;
                         @"Reason", @"Referrer", @"Contact Person", @"Mother/Father/etc",
                         @"(###)-###-####", @"(###)-###-####", @"me@example.com",nil];
     patientTitleArray = [[NSMutableArray alloc] initWithObjects:@"First name", @"Last name", @"Child DOB",
-                        @"Reason", @"Referrer", @"Contact person", @"Relationship",
-                        @"Contact phone #", @"Mobile phone #", @"Contact email",nil];
-
+                         @"Reason", @"Referrer", @"Contact person", @"Relationship",
+                         @"Contact phone #", @"Mobile phone #", @"Contact email",nil];
+    
     
     NSArray *buttonNames = [NSArray arrayWithObjects:
                             @"Yes", @"No", nil];
     newPatientSegment = [[UISegmentedControl alloc]
-                                            initWithItems:buttonNames];
-    newPatientSegment.frame = CGRectMake(10, 120, 300, 30);
+                         initWithItems:buttonNames];
+    newPatientSegment.frame = CGRectMake(10, 150, 300, 30);
     newPatientSegment.momentary = NO;
     [newPatientSegment addTarget:self action:@selector(newPatientAction:) forControlEvents:UIControlEventValueChanged];
     newPatientSegment.segmentedControlStyle = UISegmentedControlStyleBar;
     [scrollView addSubview:newPatientSegment];
     
-    UITableView *patientTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 160, 300, 440) style:UITableViewStylePlain];
-    UITableViewCell *patientFNameCell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, 300, 0)];
-    fname_=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 300, patientFNameCell.frame.size.height)];
-    fname_.autoresizingMask=UIViewAutoresizingFlexibleHeight;
-    fname_.autoresizesSubviews=YES;
-    [fname_ setBorderStyle:UITextBorderStyleRoundedRect];
-    [fname_ setPlaceholder:@"First name"];
-    [fname_ addTarget:self action:@selector(textFieldFinished:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    fname_.delegate = self;
-    
-    lname_=[[UITextField alloc]initWithFrame:CGRectMake(0, patientFNameCell.frame.size.height, 300, patientFNameCell.frame.size.height)];
-    lname_.autoresizingMask=UIViewAutoresizingFlexibleHeight;
-    lname_.autoresizesSubviews=YES;
-    [lname_ setBorderStyle:UITextBorderStyleRoundedRect];
-    [lname_ setPlaceholder:@"Last name"];
-    [lname_ addTarget:self action:@selector(textFieldFinished:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    lname_.delegate = self;
-    
-//    [patientFNameCell addSubview:fname_]; // not needed
-//    [patientTableView addSubview:patientFNameCell];
+    UITableView *patientTableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 190, 300, 440) style:UITableViewStylePlain];
     patientTableView.delegate = self; // not sure if needed
     patientTableView.dataSource = self; // definitely needed
-//    [patientTableView addSubview: patientFNameCell]; // not needed
     [scrollView addSubview:patientTableView];
+    
+    UILabel *second = [[UILabel alloc] initWithFrame:CGRectMake(10, 200+440, 300, 30)];
+    second.font = [UIFont systemFontOfSize:14];
+    second.text = @"Appointment Information";
+    second.backgroundColor = maroonBG;
+    [second setLineBreakMode:(NSLineBreakByWordWrapping)];
+    second.numberOfLines = 2;
+    second.textColor = [UIColor whiteColor];
+    [scrollView addSubview:second];
+    
+    UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+440, 300, 25)];
+    label3.textAlignment=NSTextAlignmentCenter;
+    label2.textAlignment=NSTextAlignmentCenter;
+    first.textAlignment=NSTextAlignmentCenter;
+    second.textAlignment=NSTextAlignmentCenter;
+    label1.textAlignment=NSTextAlignmentCenter;
+    label3.font = [UIFont systemFontOfSize:14];
+    label3.text = @"Location Preference";
+    [label3 setLineBreakMode:(NSLineBreakByWordWrapping)];
+    label3.numberOfLines = 5;
+    
+    label3.backgroundColor = [UIColor clearColor];
+    [scrollView addSubview:label3];
+    
+    
+    locationNames = [[NSMutableArray alloc] initWithObjects:
+                     @"Meridian Mark ", @"Alpharetta", @"Duluth",nil];
+    locationNames2 = [[NSMutableArray alloc] initWithObjects:
+                      @"Marietta", @"Fayetteville", @"Forsyth", nil];
+    locationSegment = [[UISegmentedControl alloc]
+                       initWithItems:locationNames];
+    locationSegment.frame = CGRectMake(10, 230+440+30, 300, 30);
+    locationSegment.momentary = NO;
+    [locationSegment addTarget:self action:@selector(locationAction:) forControlEvents:UIControlEventValueChanged];
+    locationSegment.segmentedControlStyle = UISegmentedControlStyleBar;
+    [scrollView addSubview:locationSegment];
+    
+    locationSegment2 = [[UISegmentedControl alloc]
+                        initWithItems:locationNames2];
+    locationSegment2.frame = CGRectMake(10, 230+440+60, 300, 30);
+    locationSegment2.momentary = NO;
+    [locationSegment2 addTarget:self action:@selector(locationAction:) forControlEvents:UIControlEventValueChanged];
+    locationSegment2.segmentedControlStyle = UISegmentedControlStyleBar;
+    [scrollView addSubview:locationSegment2];
+    
+    UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+530, 300, 30)];
+    label4.textAlignment = NSTextAlignmentCenter;
+    label4.font = [UIFont systemFontOfSize:14];
+    label4.text = @"Preferred Date?";
+    [label4 setLineBreakMode:(NSLineBreakByWordWrapping)];
+    label4.numberOfLines = 5;
+    label4.backgroundColor = [UIColor clearColor];
+    [scrollView addSubview:label4];
+    
+    preferred_ = [[UITextField alloc] initWithFrame:CGRectMake(10, 230+500+60, 300, 30)];
+    preferred_.placeholder = @"\t01/01/2013";
+    preferred_.backgroundColor = [UIColor whiteColor];
+    [preferred_.layer setCornerRadius:5.0f]; //rounded corners
+    [preferred_.layer setMasksToBounds:YES];
+    [preferred_.layer setBorderWidth:0.5f];
+	preferred_.autocorrectionType = UITextAutocorrectionTypeNo ;
+	preferred_.autocapitalizationType = UITextAutocapitalizationTypeNone;
+	preferred_.adjustsFontSizeToFitWidth = YES;
+    preferred_.delegate = self;
+    [scrollView addSubview:preferred_];
+    
+    UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+30, 300, 60)];
+    label5.textAlignment = NSTextAlignmentCenter;
+    label5.font = [UIFont systemFontOfSize:14];
+    label5.text = @"***We are not contracted with Peachstate or out of state Medicaid";
+    [label5 setLineBreakMode:(NSLineBreakByWordWrapping)];
+    label5.numberOfLines = 5;
+    label5.backgroundColor = [UIColor clearColor];
+    [scrollView addSubview:label5];
+    
+    UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+90, 300, 30)];
+    label6.textAlignment = NSTextAlignmentCenter;
+    label6.font = [UIFont systemFontOfSize:14];
+    label6.text = @"Have x-rays been taken?";
+    [label6 setLineBreakMode:(NSLineBreakByWordWrapping)];
+    label6.numberOfLines = 5;
+    label6.backgroundColor = [UIColor clearColor];
+    [scrollView addSubview:label6];
+    
+    xraySegment = [[UISegmentedControl alloc]
+                   initWithItems:buttonNames];
+    xraySegment.frame = CGRectMake(10, 230+560+120, 300, 30);
+    xraySegment.momentary = NO;
+    [xraySegment addTarget:self action:@selector(xrayAction:) forControlEvents:UIControlEventValueChanged];
+    xraySegment.segmentedControlStyle = UISegmentedControlStyleBar;
+    [scrollView addSubview:xraySegment];
+    
+    UILabel *label7 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+150, 300, 30)];
+    label7.textAlignment = NSTextAlignmentCenter;
+    label7.font = [UIFont systemFontOfSize:14];
+    label7.text = @"If yes please bring them to your appointment.";
+    [label7 setLineBreakMode:(NSLineBreakByWordWrapping)];
+    label7.numberOfLines = 5;
+    label7.backgroundColor = [UIColor clearColor];
+    [scrollView addSubview:label7];
+    
+    UILabel *label8 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+180, 300, 30)];
+    label8.textAlignment = NSTextAlignmentCenter;
+    label8.font = [UIFont systemFontOfSize:14];
+    label8.text = @"Additional Information";
+    [label8 setLineBreakMode:(NSLineBreakByWordWrapping)];
+    label8.numberOfLines = 5;
+    label8.backgroundColor = [UIColor clearColor];
+    [scrollView addSubview:label8];
+    
+    additional_ = [[UITextField alloc] initWithFrame:CGRectMake(10, 230+560+210, 300, 100)];
+    additional_.placeholder = @"\tAdditional information";
+    additional_.backgroundColor = [UIColor whiteColor];
+    [additional_.layer setCornerRadius:5.0f]; //rounded corners
+    [additional_.layer setMasksToBounds:YES];
+    [additional_.layer setBorderWidth:0.5f];
+	additional_.autocorrectionType = UITextAutocorrectionTypeNo ;
+	additional_.autocapitalizationType = UITextAutocapitalizationTypeNone;
+	additional_.adjustsFontSizeToFitWidth = YES;
+    additional_.delegate = self;
+    [scrollView addSubview:additional_];
+    
+    UILabel *label9 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+210+100, 300, 90)];
+    label9.textAlignment = NSTextAlignmentCenter;
+    label9.font = [UIFont systemFontOfSize:14];
+    label9.text = @"A member of our scheduling team will contact you by 5 PM unless request is received after 3 PM, in which case you will be contacted on the next business day.";
+    [label9 setLineBreakMode:(NSLineBreakByWordWrapping)];
+    label9.numberOfLines = 5;
+    label9.backgroundColor = [UIColor clearColor];
+    [scrollView addSubview:label9];
+    
+    //    UIPickerView *myPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 200)];
+    //    myPickerView.delegate = self;
+    //    myPickerView.showsSelectionIndicator = YES;
+    //    [patient addSubview:myPickerView];
     
     
 }
@@ -172,7 +312,7 @@ NSMutableArray *patientTitleArray;
     else if(textField == relationship_)
         relationship = textField.text;
     else if(textField == mPhone_)
-        mPhone = textField.text;    
+        mPhone = textField.text;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -241,7 +381,7 @@ NSMutableArray *patientTitleArray;
             tf = email_ = [self makeTextField:email placeholder:placeholderArray[indexPath.row]];
             [cell addSubview:email_];
             break;
-
+            
     }
 	tf.frame = CGRectMake(120, 12, 170, 30);
 	[tf addTarget:self action:@selector(textFieldFinished:) forControlEvents:UIControlEventEditingDidEndOnExit];
@@ -253,20 +393,33 @@ NSMutableArray *patientTitleArray;
 -(IBAction) newPatientAction:(id)sender
 {
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-    switch ([segmentedControl selectedSegmentIndex])
-    {
-        case 0:
-        {
-            NSLog(@"Yes new patient");
-            break;
-        }
-        case 1:
-        {
-            NSLog(@"No, old patient");
-            break;
-        }
-    }
+    newPatient = [segmentedControl selectedSegmentIndex] == 0 ? @"Yes" : @"No";
+    NSLog([segmentedControl selectedSegmentIndex] == 0 ? @"Yes" : @"No");
 }
+
+-(IBAction) xrayAction:(id)sender
+{
+    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+    xrayTaken = [segmentedControl selectedSegmentIndex] == 0 ? @"Yes" : @"No";
+    NSLog([segmentedControl selectedSegmentIndex] == 0 ? @"Yes" : @"No");
+}
+
+-(IBAction) locationAction:(id)sender
+{
+    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+    preferredLocation = locationNames[ [segmentedControl selectedSegmentIndex] ];
+    if(segmentedControl == locationSegment)
+    {
+        [locationSegment2 setSelectedSegmentIndex:UISegmentedControlNoSegment];
+    }
+    else // locationSegment2
+    {
+        [locationSegment setSelectedSegmentIndex:UISegmentedControlNoSegment];
+    }
+    NSLog(preferredLocation);
+    
+}
+
 -(IBAction)buttonAction1
 {
     NSLog(@"Pressed done.");
