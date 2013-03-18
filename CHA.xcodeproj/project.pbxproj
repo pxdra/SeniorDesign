@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		720D039716A6624100121249 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 720D039616A6624100121249 /* CallViewController.m */; };
-		723F4C1716ED1F6D004EB127 /* MakeAppointmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723F4C1616ED1F6D004EB127 /* MakeAppointmentViewController.m */; };
-		723F4C1A16ED2379004EB127 /* FormTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723F4C1916ED2379004EB127 /* FormTableController.m */; };
 		724BA6D616C039AB00BCE3FA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 724BA6D516C039AB00BCE3FA /* icon.png */; };
 		727C90E816DA90AD0093E365 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 727C90E716DA90AD0093E365 /* Person.m */; };
 		727C90EB16DA90CB0093E365 /* GreenBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 727C90EA16DA90CB0093E365 /* GreenBox.m */; };
 		727C90ED16DAB4820093E365 /* Physicians.json in Resources */ = {isa = PBXBuildFile; fileRef = 727C90EC16DAB4810093E365 /* Physicians.json */; };
 		727CDF6C16F3A04B004CBC3E /* AppointmentWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727CDF6B16F3A04B004CBC3E /* AppointmentWebViewController.m */; };
+		72D4E03F16F55F32001FFC6D /* Appointment2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D4E03E16F55F32001FFC6D /* Appointment2ViewController.m */; };
 		72E3061F16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72E3061E16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg */; };
 		9A20534416A5F28800399FB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534316A5F28800399FB0 /* UIKit.framework */; };
 		9A20534616A5F28800399FB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534516A5F28800399FB0 /* Foundation.framework */; };
@@ -49,10 +48,6 @@
 /* Begin PBXFileReference section */
 		720D039516A6624100121249 /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
 		720D039616A6624100121249 /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
-		723F4C1516ED1F6D004EB127 /* MakeAppointmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeAppointmentViewController.h; sourceTree = "<group>"; };
-		723F4C1616ED1F6D004EB127 /* MakeAppointmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeAppointmentViewController.m; sourceTree = "<group>"; };
-		723F4C1816ED2379004EB127 /* FormTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormTableController.h; sourceTree = "<group>"; };
-		723F4C1916ED2379004EB127 /* FormTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormTableController.m; sourceTree = "<group>"; };
 		724BA6D516C039AB00BCE3FA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		727C90E616DA90AD0093E365 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		727C90E716DA90AD0093E365 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
@@ -61,6 +56,8 @@
 		727C90EC16DAB4810093E365 /* Physicians.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Physicians.json; sourceTree = "<group>"; };
 		727CDF6A16F3A04B004CBC3E /* AppointmentWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentWebViewController.h; sourceTree = "<group>"; };
 		727CDF6B16F3A04B004CBC3E /* AppointmentWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentWebViewController.m; sourceTree = "<group>"; };
+		72D4E03D16F55F32001FFC6D /* Appointment2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appointment2ViewController.h; sourceTree = "<group>"; };
+		72D4E03E16F55F32001FFC6D /* Appointment2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appointment2ViewController.m; sourceTree = "<group>"; };
 		72E3061E16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "childrens-orthopaedics-atlanta-logo.jpg"; sourceTree = "<group>"; };
 		9A20533F16A5F28800399FB0 /* CHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A20534316A5F28800399FB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -158,9 +155,9 @@
 				720D039516A6624100121249 /* CallViewController.h */,
 				720D039616A6624100121249 /* CallViewController.m */,
 				9A20535316A5F28800399FB0 /* AppDelegate.m */,
-				723F4C1516ED1F6D004EB127 /* MakeAppointmentViewController.h */,
-				723F4C1616ED1F6D004EB127 /* MakeAppointmentViewController.m */,
 				9A20535B16A5F28800399FB0 /* MainStoryboard_iPhone.storyboard */,
+				72D4E03D16F55F32001FFC6D /* Appointment2ViewController.h */,
+				72D4E03E16F55F32001FFC6D /* Appointment2ViewController.m */,
 				727CDF6A16F3A04B004CBC3E /* AppointmentWebViewController.h */,
 				727CDF6B16F3A04B004CBC3E /* AppointmentWebViewController.m */,
 				9AF04B9D16C711D8002087FD /* Location.h */,
@@ -189,8 +186,6 @@
 				9A20536B16A5F28800399FB0 /* second.png */,
 				9A20536D16A5F28800399FB0 /* second@2x.png */,
 				9A20534A16A5F28800399FB0 /* Supporting Files */,
-				723F4C1816ED2379004EB127 /* FormTableController.h */,
-				723F4C1916ED2379004EB127 /* FormTableController.m */,
 			);
 			path = CHA;
 			sourceTree = "<group>";
@@ -299,9 +294,8 @@
 				9A9D7C5316C7460000F1FEA6 /* AddressViewController.m in Sources */,
 				727C90E816DA90AD0093E365 /* Person.m in Sources */,
 				727C90EB16DA90CB0093E365 /* GreenBox.m in Sources */,
-				723F4C1716ED1F6D004EB127 /* MakeAppointmentViewController.m in Sources */,
-				723F4C1A16ED2379004EB127 /* FormTableController.m in Sources */,
 				727CDF6C16F3A04B004CBC3E /* AppointmentWebViewController.m in Sources */,
+				72D4E03F16F55F32001FFC6D /* Appointment2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
