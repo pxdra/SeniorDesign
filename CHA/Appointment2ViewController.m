@@ -79,7 +79,7 @@ NSMutableArray *timeArray;
                                                                    target:self
                                                                    action: @selector(buttonAction1)];
     self.navigationItem.rightBarButtonItem = rightButton;
-//    NSLog(@"float value is: %f", self.view.frame.size.height);
+    //    NSLog(@"float value is: %f", self.view.frame.size.height);
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,
                                                                 self.view.frame.size.height)];
     NSInteger viewcount = 3;
@@ -212,7 +212,7 @@ NSMutableArray *timeArray;
     [scrollView addSubview:label15];
     
     timeSegment = [[UISegmentedControl alloc]
-                         initWithItems:timeArray];
+                   initWithItems:timeArray];
     timeSegment.frame = CGRectMake(10, 230+560+30+30, 300, 30);
     timeSegment.momentary = NO;
     [timeSegment addTarget:self action:@selector(timeAction:) forControlEvents:UIControlEventValueChanged];
@@ -307,11 +307,11 @@ NSMutableArray *timeArray;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-//    NSLog(@"text field should return");
-//    if(textField.text.length < 1)
-//        NSLog(@"Oops still empty string");
-//    else
-//        NSLog(textField.text);
+    //    NSLog(@"text field should return");
+    //    if(textField.text.length < 1)
+    //        NSLog(@"Oops still empty string");
+    //    else
+    //        NSLog(textField.text);
     [textField resignFirstResponder];
     return YES;
 }
@@ -454,7 +454,7 @@ NSMutableArray *timeArray;
     {
         [locationSegment setSelectedSegmentIndex:UISegmentedControlNoSegment];
     }
-//    NSLog(preferredLocation);
+    //    NSLog(preferredLocation);
     
 }
 
@@ -472,22 +472,118 @@ NSMutableArray *timeArray;
     b &= cPhone!=nil && cPhone.length > 0;
     b &= mPhone!=nil && mPhone.length > 0;
     b &= email!=nil && email.length > 0;
-//    b &= preferredLocation!=nil && preferredLocation.length > 0;
-//    b &= preferredDate!=nil && preferredDate.length>0;
+    //    b &= preferredLocation!=nil && preferredLocation.length > 0;
+    //    b &= preferredDate!=nil && preferredDate.length>0;
     if(b == TRUE)
+    {
+        NSString *receiver = @"appointments@childrensortho.com";
+        NSMutableString *url = [[NSMutableString alloc] initWithCapacity:4096];
+        [url appendString: @"mailto:"];
+        [url appendString:receiver];
+        [url appendString:@"&subject=CHA%20Online%20Appointment%20Request"];
+        [url appendString:@"&body="];
+        NSString *newFname = [self noSpaces:fname];
+        NSString *newLname = [self noSpaces:lname];
+        NSString *newDOB = [self noSpaces:dob];
+        NSString *newReason = [self noSpaces:reason];
+        NSString *newReferrer = [self noSpaces:referrer];
+        NSString *newContact = [self noSpaces:contact];
+        NSString *newRelationship = [self noSpaces:relationship];
+        NSString *newCPhone = [self noSpaces:cPhone];
+        NSString *newMPhone = [self noSpaces:mPhone];
+        NSString *newEmail = [self noSpaces:email];
+        [url appendString:@"Child's%20name:%20"];
+        [url appendString:newFname];
+        [url appendString:@"%20"];
+        [url appendString:newLname];
+        [url appendString:@"%0A"];
+        [url appendString:@"Date%20of%20birth:%20"];
+        [url appendString:newDOB];
+        [url appendString:@"%0A"];
+        [url appendString:@"Reason:%20"];
+        [url appendString:newReason];
+        [url appendString:@"%0A"];
+        [url appendString:@"Referrer:%20"];
+        [url appendString:newReferrer];
+        [url appendString:@"%0A"];
+        [url appendString:@"Contact:%20"];
+        [url appendString:newContact];
+        [url appendString:@"%0A"];
+        [url appendString:@"Relationship%20with%20child:%20"];
+        [url appendString:newRelationship];
+        [url appendString:@"%0A"];
+        [url appendString:@"Contact%20Phone:%20"];
+        [url appendString:newCPhone];
+        [url appendString:@"%0A"];
+        [url appendString:@"Mobile%20Phone:%20"];
+        [url appendString:newMPhone];
+        [url appendString:@"%0A"];
+        [url appendString:@"Email:%20"];
+        [url appendString:newEmail];
+        [url appendString:@"%0A"];
+        NSString* newPrefLoc = nil;
+        if(preferredLocation!=nil && preferredLocation.length >0)
+        {
+            newPrefLoc = [self noSpaces:preferredLocation];
+            [url appendString:@"Preferred%20Location:%20"];
+            [url appendString:newPrefLoc];
+            [url appendString:@"0A"];
+        }
+        NSString* newPrefDate = nil;
+        if(preferredDate!=nil && preferredDate.length >0)
+        {
+            newPrefDate = [self noSpaces:preferredDate];
+            [url appendString:@"Preferred%Date:%20"];
+            [url appendString:newPrefDate];
+            [url appendString:@"0A"];
+        }
+        NSString* newPrefTime = nil;
+        if(preferredTime!=nil && preferredTime.length >0)
+        {
+            newPrefTime = [self noSpaces:preferredTime];
+            [url appendString:@"Preferred%20Time:%20"];
+            [url appendString:newPrefTime];
+            [url appendString:@"0A"];
+        }
+        NSString* newXRay = nil;
+        if(xrayTaken!=nil && xrayTaken.length >0)
+        {
+            newXRay = [self noSpaces:xrayTaken];
+            [url appendString:@"Xray%20Taken:%20"];
+            [url appendString:xrayTaken];
+            [url appendString:@"0A"];
+        }
+        NSString* newAdditional = nil;
+        if(additionalInformation!=nil && additionalInformation.length >0)
+        {
+            newAdditional = [self noSpaces:additionalInformation];
+            [url appendString:@"Additional%20Information:%20"];
+            [url appendString:newAdditional];
+            [url appendString:@"0A"];
+        }
+        
+        
+        
+        
+        
+        NSLog(url);
+        //        NSString *url = @"mailto:foo@example.com?cc=bar@example.com&subject=Greetings%20from%20Cupertino!&body=Wish%20you%20were%20here!";
+        [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+        
         NSLog(@"All okay!");
+    }
     else
         NSLog(@"Something's amiss...");
-//    NSLog(fname!=nil && fname.length > 0 ? @"Valid" : @"Invalid");
-//    NSLog(lname!=nil && lname.length > 0 ? @"Valid" : @"Invalid");
-//    NSLog(dob!=nil && dob.length > 0 ? @"Valid" : @"Invalid");
-//    NSLog(reason!=nil && reason.length > 0 ? @"Valid" : @"Invalid");
-//    NSLog(referrer!=nil && referrer.length > 0 ? @"Valid" : @"Invalid");
-//    NSLog(contact!=nil && contact.length > 0 ? @"Valid" : @"Invalid");
-//    NSLog(relationship!=nil && relationship.length > 0 ? @"Valid" : @"Invalid");
-//    NSLog(cPhone!=nil && cPhone.length > 0 ? @"Valid" : @"Invalid");
-//    NSLog(mPhone!=nil && mPhone.length > 0 ? @"Valid" : @"Invalid");
-//    NSLog(email!=nil && email.length > 0 ? @"Valid" : @"Invalid");
+    //    NSLog(fname!=nil && fname.length > 0 ? @"Valid" : @"Invalid");
+    //    NSLog(lname!=nil && lname.length > 0 ? @"Valid" : @"Invalid");
+    //    NSLog(dob!=nil && dob.length > 0 ? @"Valid" : @"Invalid");
+    //    NSLog(reason!=nil && reason.length > 0 ? @"Valid" : @"Invalid");
+    //    NSLog(referrer!=nil && referrer.length > 0 ? @"Valid" : @"Invalid");
+    //    NSLog(contact!=nil && contact.length > 0 ? @"Valid" : @"Invalid");
+    //    NSLog(relationship!=nil && relationship.length > 0 ? @"Valid" : @"Invalid");
+    //    NSLog(cPhone!=nil && cPhone.length > 0 ? @"Valid" : @"Invalid");
+    //    NSLog(mPhone!=nil && mPhone.length > 0 ? @"Valid" : @"Invalid");
+    //    NSLog(email!=nil && email.length > 0 ? @"Valid" : @"Invalid");
 }
 
 -(NSString*) notEmpty: (NSString *)field
@@ -499,6 +595,12 @@ NSMutableArray *timeArray;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSString*) noSpaces: (NSString*)text
+{
+    NSString *newString =[text stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    return newString;
 }
 
 -(UITextField*) makeTextField: (NSString*)text
