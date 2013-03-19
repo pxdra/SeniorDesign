@@ -48,6 +48,7 @@ NSString* preferredDate ;
 NSString* preferredTime;
 NSString* additionalInformation ;
 
+UITextField *chosen_;
 UITextField *fname_;
 UITextField *lname_;
 UITextField* dob_;
@@ -58,6 +59,8 @@ UITextField* relationship_;
 UITextField* cPhone_; // contact Phone
 UITextField* mPhone_; // mobile Phone
 UITextField* email_;
+
+UIToolbar* numberToolbar;
 
 UITextField * preferred_;
 UITextField *additional_;
@@ -88,7 +91,15 @@ NSMutableArray *timeArray;
   
   gestureRecognizer.cancelsTouchesInView = NO;
   [self.view addGestureRecognizer:gestureRecognizer];
-
+  
+  numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+  numberToolbar.barStyle = UIBarStyleBlackTranslucent;
+  numberToolbar.items = [NSArray arrayWithObjects:
+                         [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                         [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                         [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
+                         nil];
+  [numberToolbar sizeToFit];
 	// Do any additional setup after loading the view.
     UIColor * maroonBG = [UIColor colorWithRed:74/255.0f green:30/255.0f blue:40/255.0f alpha:1.0f];
     // text.borderStyle = UITextBorderStyleRoundedRect;
@@ -219,7 +230,7 @@ NSMutableArray *timeArray;
 	preferred_.adjustsFontSizeToFitWidth = YES;
     preferred_.delegate = self;
     [scrollView addSubview:preferred_];
-    
+  
     UILabel *label15 = [[UILabel alloc] initWithFrame:CGRectMake(10, 230+560+30, 300, 30)];
     label15.textAlignment = NSTextAlignmentCenter;
     label15.font = [UIFont systemFontOfSize:14];
@@ -356,8 +367,10 @@ NSMutableArray *timeArray;
         relationship = textField.text;
     else if(textField == mPhone_)
         mPhone = textField.text;
-    else if(textField == preferred_)
-        preferredDate = textField.text;
+    else if(textField == preferred_){
+        preferredDate = chosenDateStirng;
+        textField.text = chosenDateStirng;
+    }
     else if(textField == additional_)
         additionalInformation = textField.text;
     CGRect viewFrame = self.view.frame;
@@ -373,8 +386,10 @@ NSMutableArray *timeArray;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textView {
-  if (textView == dob_){
+  if (textView == dob_ || textView == preferred_){
     [self getDate:textView];
+  } else if (textView == mPhone_ || textView == cPhone_){
+    chosen_=textView;
   }
   CGRect textFieldRect = [self.view.window convertRect:textView.bounds fromView:textView];
   CGRect viewRect = [self.view.window convertRect:self.view.bounds fromView:self.view];
@@ -474,16 +489,23 @@ NSMutableArray *timeArray;
         case 7:
             cell.textLabel.text = patientTitleArray[indexPath.row];
             tf = cPhone_ = [self makeTextField:cPhone placeholder:placeholderArray[indexPath.row]];
+            cPhone_.keyboardType = UIKeyboardTypeNumberPad;
+            cPhone_.inputAccessoryView = numberToolbar;
             [cell addSubview:cPhone_];
             break;
         case 8:
             cell.textLabel.text = patientTitleArray[indexPath.row];
             tf = mPhone_ = [self makeTextField:mPhone placeholder:placeholderArray[indexPath.row]];
+            mPhone_.keyboardType = UIKeyboardTypeNumberPad;
+            mPhone_.inputAccessoryView = numberToolbar;
+            [mPhone_ setReturnKeyType:UIReturnKeyDone];
+
             [cell addSubview:mPhone_];
             break;
         case 9:
             cell.textLabel.text = patientTitleArray[indexPath.row];
             tf = email_ = [self makeTextField:email placeholder:placeholderArray[indexPath.row]];
+            email_.keyboardType = UIKeyboardTypeEmailAddress;
             [email_ setReturnKeyType:UIReturnKeyDone];
             [cell addSubview:email_];
             break;
@@ -616,11 +638,8 @@ NSMutableArray *timeArray;
             body = [body stringByAppendingString:additionalInformation];
             body = [body stringByAppendingString:@"\n"];
         }
-        NSLog(@"body:");
-        NSLog(body);
         [self sendEmailTo:to withSubject:subject withBody:body];
         //        [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
-        NSLog(@"All required parts filled");
     }
     else
     {
@@ -641,8 +660,6 @@ NSMutableArray *timeArray;
 							[to stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 							[subject stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 							body = [body stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
-    NSLog(@"Sending mail...");
-    NSLog(mailString);
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:mailString]];
 }
 
@@ -675,7 +692,7 @@ NSMutableArray *timeArray;
 	return tf ;
 }
 
-- (IBAction)getDate:(id)sender {
+- (void)getDate:(UITextField*) textField {
   actionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                             delegate:nil
                                    cancelButtonTitle:nil
@@ -685,10 +702,15 @@ NSMutableArray *timeArray;
   [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
   
   CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
+  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];  
+  [dateFormat setDateFormat:@"MMM d, YYYY"];
   
+  NSDate *defaultDate = [dateFormat dateFromString:@"Jan 1, 1995"];  
   datePickerView = [[UIDatePicker alloc] initWithFrame:pickerFrame];
   datePickerView.datePickerMode = UIDatePickerModeDate;
   datePickerView.maximumDate = [NSDate date];
+  if (textField == dob_)
+  datePickerView.date = defaultDate;
   
   [actionSheet addSubview:datePickerView];
   
@@ -715,6 +737,26 @@ NSMutableArray *timeArray;
   chosenDate= [[NSDate alloc] initWithTimeInterval:0 sinceDate:datePickerView.date];
   chosenDateStirng=dateString;
   [self.view endEditing:YES];
+}
+//Hide Keyboard
+- (void) hideKeyboard {
+  [self.view endEditing:YES];
+}
+
+-(void)doneWithNumberPad{
+  if (chosen_.text.length!=10){
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                    message:@"Phone numbers have to be 10 digits. Please make sure you included area code."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    chosen_.text=@"";
+  } else{
+    chosen_.text=[NSString stringWithFormat:@"(%@) %@-%@", [chosen_.text substringWithRange:NSMakeRange(0, 3)], [chosen_.text substringWithRange:NSMakeRange(3, 3)], [chosen_.text substringFromIndex:6]];
+    [chosen_ resignFirstResponder];
+    
+  }
 }
 
 @end
