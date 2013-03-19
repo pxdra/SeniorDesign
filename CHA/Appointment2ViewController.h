@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Appointment2ViewController : UIViewController<UITextFieldDelegate>
+@interface Appointment2ViewController : UIViewController<UITextFieldDelegate, UIActionSheetDelegate, UIPickerViewDelegate>
 
 
 @end

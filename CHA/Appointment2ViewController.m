@@ -12,12 +12,24 @@
 
 @end
 
+static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
+static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
+static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
+static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
+static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
+CGFloat animatedDistance;
+
+UIActionSheet *actionSheet;
+UIDatePicker * datePickerView;
+
 UIScrollView *scrollView;
 UISegmentedControl *newPatientSegment;
 UISegmentedControl *locationSegment;
 UISegmentedControl *locationSegment2;
 UISegmentedControl *xraySegment;
 UISegmentedControl *timeSegment;
+NSDate* chosenDate;
+NSString* chosenDateStirng;
 NSString* fname;
 NSString* lname;
 NSString* dob;
@@ -71,6 +83,12 @@ NSMutableArray *timeArray;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissSheet) name:UIApplicationWillResignActiveNotification object:nil];
+  UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+  
+  gestureRecognizer.cancelsTouchesInView = NO;
+  [self.view addGestureRecognizer:gestureRecognizer];
+
 	// Do any additional setup after loading the view.
     UIColor * maroonBG = [UIColor colorWithRed:74/255.0f green:30/255.0f blue:40/255.0f alpha:1.0f];
     // text.borderStyle = UITextBorderStyleRoundedRect;
@@ -113,7 +131,7 @@ NSMutableArray *timeArray;
     [scrollView addSubview:label2];
     
     yourItemsArray = [[NSMutableArray alloc] initWithObjects:@"item 01", @"item 02", @"item 03", nil];
-    placeholderArray = [[NSMutableArray alloc] initWithObjects:@"John", @"Doe", @"01/01/1990",
+    placeholderArray = [[NSMutableArray alloc] initWithObjects:@"John", @"Doe", @"Jan 01, 1990",
                         @"Reason", @"Referrer", @"Contact Person", @"Mother/Father/etc",
                         @"(###)-###-####", @"(###)-###-####", @"me@example.com",nil];
     patientTitleArray = [[NSMutableArray alloc] initWithObjects:@"First name", @"Last name", @"Child DOB",
@@ -320,8 +338,10 @@ NSMutableArray *timeArray;
 		fname = textField.text ;
     else if ( textField == lname_ )
 		lname = textField.text ;
-    else if(textField == dob_)
-        dob = textField.text;
+    else if(textField == dob_){
+        dob = chosenDateStirng;
+        dob_.text = chosenDateStirng;
+    }
     else if(textField == reason_)
         reason = textField.text;
     else if(textField == referrer_)
@@ -340,7 +360,58 @@ NSMutableArray *timeArray;
         preferredDate = textField.text;
     else if(textField == additional_)
         additionalInformation = textField.text;
+    CGRect viewFrame = self.view.frame;
+    viewFrame.origin.y += animatedDistance;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
+    
+    [self.view setFrame:viewFrame];
+    
+    [UIView commitAnimations];
 }
+
+- (void)textFieldDidBeginEditing:(UITextField *)textView {
+  if (textView == dob_){
+    [self getDate:textView];
+  }
+  CGRect textFieldRect = [self.view.window convertRect:textView.bounds fromView:textView];
+  CGRect viewRect = [self.view.window convertRect:self.view.bounds fromView:self.view];
+  CGFloat midline = textFieldRect.origin.y + 0.5 * textFieldRect.size.height;
+  CGFloat numerator =
+  midline - viewRect.origin.y
+  - MINIMUM_SCROLL_FRACTION * viewRect.size.height;
+  CGFloat denominator =
+  (MAXIMUM_SCROLL_FRACTION - MINIMUM_SCROLL_FRACTION)
+  * viewRect.size.height;
+  CGFloat heightFraction = numerator / denominator;
+  UIInterfaceOrientation orientation =
+  [[UIApplication sharedApplication] statusBarOrientation];
+  if (orientation == UIInterfaceOrientationPortrait ||
+      orientation == UIInterfaceOrientationPortraitUpsideDown)
+  {
+    animatedDistance = floor(PORTRAIT_KEYBOARD_HEIGHT * heightFraction);
+  }
+  else
+  {
+    animatedDistance = floor(LANDSCAPE_KEYBOARD_HEIGHT * heightFraction);
+  }
+  
+  CGRect viewFrame = scrollView.frame;
+  viewFrame.origin.y -= animatedDistance;
+  
+  [UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationBeginsFromCurrentState:YES];
+  [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
+  
+  [self.view setFrame:viewFrame];
+  
+  [UIView commitAnimations];
+
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -361,36 +432,43 @@ NSMutableArray *timeArray;
         case 0:
             cell.textLabel.text = patientTitleArray[indexPath.row];
 			tf = fname_ = [self makeTextField:fname placeholder:placeholderArray[indexPath.row]];
+        [fname_ setReturnKeyType:UIReturnKeyDone];
 			[cell addSubview:fname_];
             break;
         case 1:
             cell.textLabel.text = patientTitleArray[indexPath.row];
             tf = lname_ = [self makeTextField:lname placeholder:placeholderArray[indexPath.row]];
+            [lname_ setReturnKeyType:UIReturnKeyDone];
             [cell addSubview:lname_];
             break;
         case 2:
             cell.textLabel.text = patientTitleArray[indexPath.row];
             tf = dob_ = [self makeTextField:dob placeholder:placeholderArray[indexPath.row]];
+            [dob_ addTarget:self action:@selector(getD) forControlEvents:UIControlEventValueChanged];
             [cell addSubview:dob_];
             break;
         case 3:
             cell.textLabel.text = patientTitleArray[indexPath.row];
             tf = reason_ = [self makeTextField:reason placeholder:placeholderArray[indexPath.row]];
+            [reason_ setReturnKeyType:UIReturnKeyDone];
             [cell addSubview:reason_];
             break;
         case 4:
             cell.textLabel.text = patientTitleArray[indexPath.row];
             tf = referrer_ = [self makeTextField:referrer placeholder:placeholderArray[indexPath.row]];
+            [referrer_ setReturnKeyType:UIReturnKeyDone]; 
             [cell addSubview:referrer_];
             break;
         case 5:
             cell.textLabel.text = patientTitleArray[indexPath.row];
             tf = contact_ = [self makeTextField:contact placeholder:placeholderArray[indexPath.row]];
+            [contact_ setReturnKeyType:UIReturnKeyDone];
             [cell addSubview:contact_];
             break;
         case 6:
             cell.textLabel.text = patientTitleArray[indexPath.row];
             tf = relationship_ = [self makeTextField:relationship placeholder:placeholderArray[indexPath.row]];
+            [relationship_ setReturnKeyType:UIReturnKeyDone];
             [cell addSubview:relationship_];
             break;
         case 7:
@@ -406,6 +484,7 @@ NSMutableArray *timeArray;
         case 9:
             cell.textLabel.text = patientTitleArray[indexPath.row];
             tf = email_ = [self makeTextField:email placeholder:placeholderArray[indexPath.row]];
+            [email_ setReturnKeyType:UIReturnKeyDone];
             [cell addSubview:email_];
             break;
             
@@ -594,6 +673,48 @@ NSMutableArray *timeArray;
 	tf.adjustsFontSizeToFitWidth = YES;
 	tf.textColor = [UIColor colorWithRed:56.0f/255.0f green:84.0f/255.0f blue:135.0f/255.0f alpha:1.0f];
 	return tf ;
+}
+
+- (IBAction)getDate:(id)sender {
+  actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                            delegate:nil
+                                   cancelButtonTitle:nil
+                              destructiveButtonTitle:nil
+                                   otherButtonTitles:nil];
+  
+  [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+  
+  CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
+  
+  datePickerView = [[UIDatePicker alloc] initWithFrame:pickerFrame];
+  datePickerView.datePickerMode = UIDatePickerModeDate;
+  datePickerView.maximumDate = [NSDate date];
+  
+  [actionSheet addSubview:datePickerView];
+  
+  UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Close"]];
+  closeButton.momentary = YES;
+  closeButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
+  closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+  closeButton.tintColor = [UIColor blackColor];
+  [closeButton addTarget:actionSheet action:@selector(dismissWithClickedButtonIndex: animated: ) forControlEvents:UIControlEventValueChanged];
+  actionSheet.delegate=self;
+  [actionSheet addSubview:closeButton];
+  
+  [actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+  
+  [actionSheet setBounds:CGRectMake(0, 0, 320, 485)];
+  
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+  [dateFormat setDateFormat:@"MMM d, YYYY"];
+  NSString *dateString = [dateFormat stringFromDate:datePickerView.date];
+  chosenDate= [[NSDate alloc] initWithTimeInterval:0 sinceDate:datePickerView.date];
+  chosenDateStirng=dateString;
+  [self.view endEditing:YES];
 }
 
 @end
