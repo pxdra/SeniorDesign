@@ -476,114 +476,85 @@ NSMutableArray *timeArray;
     //    b &= preferredDate!=nil && preferredDate.length>0;
     if(b == TRUE)
     {
-        NSString *receiver = @"appointments@childrensortho.com";
-        NSMutableString *url = [[NSMutableString alloc] initWithCapacity:4096];
-        [url appendString: @"mailto:"];
-        [url appendString:receiver];
-        [url appendString:@"&subject=CHA%20Online%20Appointment%20Request"];
-        [url appendString:@"&body="];
-        NSString *newFname = [self noSpaces:fname];
-        NSString *newLname = [self noSpaces:lname];
-        NSString *newDOB = [self noSpaces:dob];
-        NSString *newReason = [self noSpaces:reason];
-        NSString *newReferrer = [self noSpaces:referrer];
-        NSString *newContact = [self noSpaces:contact];
-        NSString *newRelationship = [self noSpaces:relationship];
-        NSString *newCPhone = [self noSpaces:cPhone];
-        NSString *newMPhone = [self noSpaces:mPhone];
-        NSString *newEmail = [self noSpaces:email];
-        [url appendString:@"Child's%20name:%20"];
-        [url appendString:newFname];
-        [url appendString:@"%20"];
-        [url appendString:newLname];
-        [url appendString:@"%0A"];
-        [url appendString:@"Date%20of%20birth:%20"];
-        [url appendString:newDOB];
-        [url appendString:@"%0A"];
-        [url appendString:@"Reason:%20"];
-        [url appendString:newReason];
-        [url appendString:@"%0A"];
-        [url appendString:@"Referrer:%20"];
-        [url appendString:newReferrer];
-        [url appendString:@"%0A"];
-        [url appendString:@"Contact:%20"];
-        [url appendString:newContact];
-        [url appendString:@"%0A"];
-        [url appendString:@"Relationship%20with%20child:%20"];
-        [url appendString:newRelationship];
-        [url appendString:@"%0A"];
-        [url appendString:@"Contact%20Phone:%20"];
-        [url appendString:newCPhone];
-        [url appendString:@"%0A"];
-        [url appendString:@"Mobile%20Phone:%20"];
-        [url appendString:newMPhone];
-        [url appendString:@"%0A"];
-        [url appendString:@"Email:%20"];
-        [url appendString:newEmail];
-        [url appendString:@"%0A"];
-        NSString* newPrefLoc = nil;
+        NSString *to = @"appointments@childrensortho.com";
+        NSString *subject = @"CHA Online Appointment";
+        NSString *body = @"Child's name: ";
+        body = [body stringByAppendingString:fname];
+        body = [body stringByAppendingString:@" "];
+        body = [body stringByAppendingString:lname];
+        body = [body stringByAppendingString:@"\n"];
+        body = [body stringByAppendingString:@"Date of birth: "];
+        body = [body stringByAppendingString:dob];
+        body = [body stringByAppendingString:@"\n"];
+        body = [body stringByAppendingString:@"Reason: "];
+        body = [body stringByAppendingString:reason];
+        body = [body stringByAppendingString:@"\n"];
+        body = [body stringByAppendingString:@"Referrer: "];
+        body = [body stringByAppendingString:referrer];
+        body = [body stringByAppendingString:@"\n"];
+        body = [body stringByAppendingString:@"Contact: "];
+        body = [body stringByAppendingString:contact];
+        body = [body stringByAppendingString:@"\n"];
+        body = [body stringByAppendingString:@"Relationship to child: "];
+        body = [body stringByAppendingString:relationship];
+        body = [body stringByAppendingString:@"\n"];
+        body = [body stringByAppendingString:@"Contact phone: "];
+        body = [body stringByAppendingString:cPhone];
+        body = [body stringByAppendingString:@"\n"];
+        body = [body stringByAppendingString:@"Mobile phone: "];
+        body = [body stringByAppendingString:mPhone];
+        body = [body stringByAppendingString:@"\n"];
+        body = [body stringByAppendingString:@"Email: "];
+        body = [body stringByAppendingString:email];
+        body = [body stringByAppendingString:@"\n"];
         if(preferredLocation!=nil && preferredLocation.length >0)
         {
-            newPrefLoc = [self noSpaces:preferredLocation];
-            [url appendString:@"Preferred%20Location:%20"];
-            [url appendString:newPrefLoc];
-            [url appendString:@"0A"];
+            body = [body stringByAppendingString:@"Preferred Location: "];
+            body = [body stringByAppendingString:preferredLocation];
+            body = [body stringByAppendingString:@"\n"];
         }
-        NSString* newPrefDate = nil;
         if(preferredDate!=nil && preferredDate.length >0)
         {
-            newPrefDate = [self noSpaces:preferredDate];
-            [url appendString:@"Preferred%Date:%20"];
-            [url appendString:newPrefDate];
-            [url appendString:@"0A"];
+            body = [body stringByAppendingString:@"Preferred Date: "];
+            body = [body stringByAppendingString:preferredDate];
+            body = [body stringByAppendingString:@"\n"];
         }
-        NSString* newPrefTime = nil;
         if(preferredTime!=nil && preferredTime.length >0)
         {
-            newPrefTime = [self noSpaces:preferredTime];
-            [url appendString:@"Preferred%20Time:%20"];
-            [url appendString:newPrefTime];
-            [url appendString:@"0A"];
+            body = [body stringByAppendingString:@"Preferred Time: "];
+            body = [body stringByAppendingString:preferredTime];
+            body = [body stringByAppendingString:@"\n"];
         }
-        NSString* newXRay = nil;
         if(xrayTaken!=nil && xrayTaken.length >0)
         {
-            newXRay = [self noSpaces:xrayTaken];
-            [url appendString:@"Xray%20Taken:%20"];
-            [url appendString:xrayTaken];
-            [url appendString:@"0A"];
+            body = [body stringByAppendingString:@"Xray taken: "];
+            body = [body stringByAppendingString:xrayTaken];
+            body = [body stringByAppendingString:@"\n"];
         }
-        NSString* newAdditional = nil;
         if(additionalInformation!=nil && additionalInformation.length >0)
         {
-            newAdditional = [self noSpaces:additionalInformation];
-            [url appendString:@"Additional%20Information:%20"];
-            [url appendString:newAdditional];
-            [url appendString:@"0A"];
+            body = [body stringByAppendingString:@"Additional information: "];
+            body = [body stringByAppendingString:additionalInformation];
+            body = [body stringByAppendingString:@"\n"];
         }
-        
-        
-        
-        
-        
-        NSLog(url);
-        //        NSString *url = @"mailto:foo@example.com?cc=bar@example.com&subject=Greetings%20from%20Cupertino!&body=Wish%20you%20were%20here!";
-        [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
-        
-        NSLog(@"All okay!");
+        NSLog(@"body:");
+        NSLog(body);
+        [self sendEmailTo:to withSubject:subject withBody:body];
+        //        [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+        NSLog(@"All required parts filled");
     }
     else
         NSLog(@"Something's amiss...");
-    //    NSLog(fname!=nil && fname.length > 0 ? @"Valid" : @"Invalid");
-    //    NSLog(lname!=nil && lname.length > 0 ? @"Valid" : @"Invalid");
-    //    NSLog(dob!=nil && dob.length > 0 ? @"Valid" : @"Invalid");
-    //    NSLog(reason!=nil && reason.length > 0 ? @"Valid" : @"Invalid");
-    //    NSLog(referrer!=nil && referrer.length > 0 ? @"Valid" : @"Invalid");
-    //    NSLog(contact!=nil && contact.length > 0 ? @"Valid" : @"Invalid");
-    //    NSLog(relationship!=nil && relationship.length > 0 ? @"Valid" : @"Invalid");
-    //    NSLog(cPhone!=nil && cPhone.length > 0 ? @"Valid" : @"Invalid");
-    //    NSLog(mPhone!=nil && mPhone.length > 0 ? @"Valid" : @"Invalid");
-    //    NSLog(email!=nil && email.length > 0 ? @"Valid" : @"Invalid");
+}
+
+- (void) sendEmailTo:(NSString *)to withSubject:(NSString *) subject withBody:(NSString *)body {
+	NSString *mailString = [NSString stringWithFormat:@"mailto:?to=%@&subject=%@&body=%@",
+							[to stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+							[subject stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+							body = [body stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+    NSLog(@"Sending mail...");
+    NSLog(mailString);
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:mailString]];
 }
 
 -(NSString*) notEmpty: (NSString *)field

@@ -13,6 +13,40 @@
 		727C90EB16DA90CB0093E365 /* GreenBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 727C90EA16DA90CB0093E365 /* GreenBox.m */; };
 		727C90ED16DAB4820093E365 /* Physicians.json in Resources */ = {isa = PBXBuildFile; fileRef = 727C90EC16DAB4810093E365 /* Physicians.json */; };
 		727CDF6C16F3A04B004CBC3E /* AppointmentWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727CDF6B16F3A04B004CBC3E /* AppointmentWebViewController.m */; };
+		72CADD9D16F7F0850084FEA1 /* CertifiedAthleticTrainers.json in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD7316F7F0850084FEA1 /* CertifiedAthleticTrainers.json */; };
+		72CADD9E16F7F0850084FEA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD7516F7F0850084FEA1 /* InfoPlist.strings */; };
+		72CADD9F16F7F0850084FEA1 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD7716F7F0850084FEA1 /* MainStoryboard_iPad.storyboard */; };
+		72CADDA016F7F0850084FEA1 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD7916F7F0850084FEA1 /* MainStoryboard_iPhone.storyboard */; };
+		72CADDA116F7F0850084FEA1 /* Fb.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD7B16F7F0850084FEA1 /* Fb.jpeg */; };
+		72CADDA216F7F0850084FEA1 /* NursePractioners.json in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD7C16F7F0850084FEA1 /* NursePractioners.json */; };
+		72CADDA316F7F0850084FEA1 /* PersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CADD7E16F7F0850084FEA1 /* PersonDetailViewController.m */; };
+		72CADDA416F7F0850084FEA1 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CADD8016F7F0850084FEA1 /* PersonViewController.m */; };
+		72CADDA516F7F0850084FEA1 /* PhysicianAssistants.json in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8116F7F0850084FEA1 /* PhysicianAssistants.json */; };
+		72CADDA616F7F0850084FEA1 /* ashleythomas.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8316F7F0850084FEA1 /* ashleythomas.png */; };
+		72CADDA716F7F0850084FEA1 /* briankelly.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8416F7F0850084FEA1 /* briankelly.png */; };
+		72CADDA816F7F0850084FEA1 /* davidkloehs.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8516F7F0850084FEA1 /* davidkloehs.png */; };
+		72CADDA916F7F0850084FEA1 /* davidmarshall.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8616F7F0850084FEA1 /* davidmarshall.png */; };
+		72CADDAA16F7F0850084FEA1 /* dennisdevito.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8716F7F0850084FEA1 /* dennisdevito.png */; };
+		72CADDAB16F7F0850084FEA1 /* derekzefo.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8816F7F0850084FEA1 /* derekzefo.png */; };
+		72CADDAC16F7F0850084FEA1 /* jedaxelrod.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8916F7F0850084FEA1 /* jedaxelrod.png */; };
+		72CADDAD16F7F0850084FEA1 /* jillflanagan.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8A16F7F0850084FEA1 /* jillflanagan.png */; };
+		72CADDAE16F7F0850084FEA1 /* jorgefabregas.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8B16F7F0850084FEA1 /* jorgefabregas.png */; };
+		72CADDAF16F7F0850084FEA1 /* kirsten-warnock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8C16F7F0850084FEA1 /* kirsten-warnock.jpg */; };
+		72CADDB016F7F0850084FEA1 /* lyndapalmer.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8D16F7F0850084FEA1 /* lyndapalmer.png */; };
+		72CADDB116F7F0850084FEA1 /* melissaleake.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8E16F7F0850084FEA1 /* melissaleake.png */; };
+		72CADDB216F7F0850084FEA1 /* michaelbusch.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD8F16F7F0850084FEA1 /* michaelbusch.png */; };
+		72CADDB316F7F0850084FEA1 /* michaelschmitz.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9016F7F0850084FEA1 /* michaelschmitz.png */; };
+		72CADDB416F7F0850084FEA1 /* nancykralovich.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9116F7F0850084FEA1 /* nancykralovich.png */; };
+		72CADDB516F7F0850084FEA1 /* rebeccalunsford.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9216F7F0850084FEA1 /* rebeccalunsford.png */; };
+		72CADDB616F7F0850084FEA1 /* robertmontero.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9316F7F0850084FEA1 /* robertmontero.PNG */; };
+		72CADDB716F7F0850084FEA1 /* stephanieathre.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9416F7F0850084FEA1 /* stephanieathre.png */; };
+		72CADDB816F7F0850084FEA1 /* stephen-kroll-profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9516F7F0850084FEA1 /* stephen-kroll-profile.jpg */; };
+		72CADDB916F7F0850084FEA1 /* timschrader.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9616F7F0850084FEA1 /* timschrader.png */; };
+		72CADDBA16F7F0850084FEA1 /* veronica-hill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9716F7F0850084FEA1 /* veronica-hill.jpg */; };
+		72CADDBB16F7F0850084FEA1 /* wallacewilson.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9816F7F0850084FEA1 /* wallacewilson.png */; };
+		72CADDBC16F7F0850084FEA1 /* williamprimos.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9916F7F0850084FEA1 /* williamprimos.png */; };
+		72CADDBD16F7F0850084FEA1 /* willimonsamuel.png in Resources */ = {isa = PBXBuildFile; fileRef = 72CADD9A16F7F0850084FEA1 /* willimonsamuel.png */; };
+		72CADDBE16F7F0850084FEA1 /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CADD9C16F7F0850084FEA1 /* TeamViewController.m */; };
 		72D4E03F16F55F32001FFC6D /* Appointment2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D4E03E16F55F32001FFC6D /* Appointment2ViewController.m */; };
 		72E3061F16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72E3061E16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg */; };
 		9A20534416A5F28800399FB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534316A5F28800399FB0 /* UIKit.framework */; };
@@ -56,6 +90,43 @@
 		727C90EC16DAB4810093E365 /* Physicians.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Physicians.json; sourceTree = "<group>"; };
 		727CDF6A16F3A04B004CBC3E /* AppointmentWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentWebViewController.h; sourceTree = "<group>"; };
 		727CDF6B16F3A04B004CBC3E /* AppointmentWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentWebViewController.m; sourceTree = "<group>"; };
+		72CADD7316F7F0850084FEA1 /* CertifiedAthleticTrainers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CertifiedAthleticTrainers.json; sourceTree = "<group>"; };
+		72CADD7616F7F0850084FEA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		72CADD7816F7F0850084FEA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		72CADD7A16F7F0850084FEA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		72CADD7B16F7F0850084FEA1 /* Fb.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Fb.jpeg; sourceTree = "<group>"; };
+		72CADD7C16F7F0850084FEA1 /* NursePractioners.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NursePractioners.json; sourceTree = "<group>"; };
+		72CADD7D16F7F0850084FEA1 /* PersonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailViewController.h; sourceTree = "<group>"; };
+		72CADD7E16F7F0850084FEA1 /* PersonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailViewController.m; sourceTree = "<group>"; };
+		72CADD7F16F7F0850084FEA1 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		72CADD8016F7F0850084FEA1 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		72CADD8116F7F0850084FEA1 /* PhysicianAssistants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhysicianAssistants.json; sourceTree = "<group>"; };
+		72CADD8316F7F0850084FEA1 /* ashleythomas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ashleythomas.png; sourceTree = "<group>"; };
+		72CADD8416F7F0850084FEA1 /* briankelly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = briankelly.png; sourceTree = "<group>"; };
+		72CADD8516F7F0850084FEA1 /* davidkloehs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = davidkloehs.png; sourceTree = "<group>"; };
+		72CADD8616F7F0850084FEA1 /* davidmarshall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = davidmarshall.png; sourceTree = "<group>"; };
+		72CADD8716F7F0850084FEA1 /* dennisdevito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dennisdevito.png; sourceTree = "<group>"; };
+		72CADD8816F7F0850084FEA1 /* derekzefo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = derekzefo.png; sourceTree = "<group>"; };
+		72CADD8916F7F0850084FEA1 /* jedaxelrod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jedaxelrod.png; sourceTree = "<group>"; };
+		72CADD8A16F7F0850084FEA1 /* jillflanagan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jillflanagan.png; sourceTree = "<group>"; };
+		72CADD8B16F7F0850084FEA1 /* jorgefabregas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jorgefabregas.png; sourceTree = "<group>"; };
+		72CADD8C16F7F0850084FEA1 /* kirsten-warnock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kirsten-warnock.jpg"; sourceTree = "<group>"; };
+		72CADD8D16F7F0850084FEA1 /* lyndapalmer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyndapalmer.png; sourceTree = "<group>"; };
+		72CADD8E16F7F0850084FEA1 /* melissaleake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = melissaleake.png; sourceTree = "<group>"; };
+		72CADD8F16F7F0850084FEA1 /* michaelbusch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = michaelbusch.png; sourceTree = "<group>"; };
+		72CADD9016F7F0850084FEA1 /* michaelschmitz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = michaelschmitz.png; sourceTree = "<group>"; };
+		72CADD9116F7F0850084FEA1 /* nancykralovich.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nancykralovich.png; sourceTree = "<group>"; };
+		72CADD9216F7F0850084FEA1 /* rebeccalunsford.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rebeccalunsford.png; sourceTree = "<group>"; };
+		72CADD9316F7F0850084FEA1 /* robertmontero.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robertmontero.PNG; sourceTree = "<group>"; };
+		72CADD9416F7F0850084FEA1 /* stephanieathre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stephanieathre.png; sourceTree = "<group>"; };
+		72CADD9516F7F0850084FEA1 /* stephen-kroll-profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "stephen-kroll-profile.jpg"; sourceTree = "<group>"; };
+		72CADD9616F7F0850084FEA1 /* timschrader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timschrader.png; sourceTree = "<group>"; };
+		72CADD9716F7F0850084FEA1 /* veronica-hill.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "veronica-hill.jpg"; sourceTree = "<group>"; };
+		72CADD9816F7F0850084FEA1 /* wallacewilson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallacewilson.png; sourceTree = "<group>"; };
+		72CADD9916F7F0850084FEA1 /* williamprimos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = williamprimos.png; sourceTree = "<group>"; };
+		72CADD9A16F7F0850084FEA1 /* willimonsamuel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = willimonsamuel.png; sourceTree = "<group>"; };
+		72CADD9B16F7F0850084FEA1 /* TeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamViewController.h; sourceTree = "<group>"; };
+		72CADD9C16F7F0850084FEA1 /* TeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamViewController.m; sourceTree = "<group>"; };
 		72D4E03D16F55F32001FFC6D /* Appointment2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appointment2ViewController.h; sourceTree = "<group>"; };
 		72D4E03E16F55F32001FFC6D /* Appointment2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appointment2ViewController.m; sourceTree = "<group>"; };
 		72E3061E16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "childrens-orthopaedics-atlanta-logo.jpg"; sourceTree = "<group>"; };
@@ -116,6 +187,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72CADD7416F7F0850084FEA1 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				72CADD7516F7F0850084FEA1 /* InfoPlist.strings */,
+				72CADD7716F7F0850084FEA1 /* MainStoryboard_iPad.storyboard */,
+				72CADD7916F7F0850084FEA1 /* MainStoryboard_iPhone.storyboard */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		72CADD8216F7F0850084FEA1 /* profile_pictures */ = {
+			isa = PBXGroup;
+			children = (
+				72CADD8316F7F0850084FEA1 /* ashleythomas.png */,
+				72CADD8416F7F0850084FEA1 /* briankelly.png */,
+				72CADD8516F7F0850084FEA1 /* davidkloehs.png */,
+				72CADD8616F7F0850084FEA1 /* davidmarshall.png */,
+				72CADD8716F7F0850084FEA1 /* dennisdevito.png */,
+				72CADD8816F7F0850084FEA1 /* derekzefo.png */,
+				72CADD8916F7F0850084FEA1 /* jedaxelrod.png */,
+				72CADD8A16F7F0850084FEA1 /* jillflanagan.png */,
+				72CADD8B16F7F0850084FEA1 /* jorgefabregas.png */,
+				72CADD8C16F7F0850084FEA1 /* kirsten-warnock.jpg */,
+				72CADD8D16F7F0850084FEA1 /* lyndapalmer.png */,
+				72CADD8E16F7F0850084FEA1 /* melissaleake.png */,
+				72CADD8F16F7F0850084FEA1 /* michaelbusch.png */,
+				72CADD9016F7F0850084FEA1 /* michaelschmitz.png */,
+				72CADD9116F7F0850084FEA1 /* nancykralovich.png */,
+				72CADD9216F7F0850084FEA1 /* rebeccalunsford.png */,
+				72CADD9316F7F0850084FEA1 /* robertmontero.PNG */,
+				72CADD9416F7F0850084FEA1 /* stephanieathre.png */,
+				72CADD9516F7F0850084FEA1 /* stephen-kroll-profile.jpg */,
+				72CADD9616F7F0850084FEA1 /* timschrader.png */,
+				72CADD9716F7F0850084FEA1 /* veronica-hill.jpg */,
+				72CADD9816F7F0850084FEA1 /* wallacewilson.png */,
+				72CADD9916F7F0850084FEA1 /* williamprimos.png */,
+				72CADD9A16F7F0850084FEA1 /* willimonsamuel.png */,
+			);
+			path = profile_pictures;
+			sourceTree = "<group>";
+		};
 		9A20533416A5F28800399FB0 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +270,18 @@
 				9A20535B16A5F28800399FB0 /* MainStoryboard_iPhone.storyboard */,
 				72D4E03D16F55F32001FFC6D /* Appointment2ViewController.h */,
 				72D4E03E16F55F32001FFC6D /* Appointment2ViewController.m */,
+				72CADD7316F7F0850084FEA1 /* CertifiedAthleticTrainers.json */,
+				72CADD7416F7F0850084FEA1 /* en.lproj */,
+				72CADD7B16F7F0850084FEA1 /* Fb.jpeg */,
+				72CADD7C16F7F0850084FEA1 /* NursePractioners.json */,
+				72CADD7D16F7F0850084FEA1 /* PersonDetailViewController.h */,
+				72CADD7E16F7F0850084FEA1 /* PersonDetailViewController.m */,
+				72CADD7F16F7F0850084FEA1 /* PersonViewController.h */,
+				72CADD8016F7F0850084FEA1 /* PersonViewController.m */,
+				72CADD8116F7F0850084FEA1 /* PhysicianAssistants.json */,
+				72CADD8216F7F0850084FEA1 /* profile_pictures */,
+				72CADD9B16F7F0850084FEA1 /* TeamViewController.h */,
+				72CADD9C16F7F0850084FEA1 /* TeamViewController.m */,
 				727CDF6A16F3A04B004CBC3E /* AppointmentWebViewController.h */,
 				727CDF6B16F3A04B004CBC3E /* AppointmentWebViewController.m */,
 				9AF04B9D16C711D8002087FD /* Location.h */,
@@ -273,6 +397,37 @@
 				72E3061F16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg in Resources */,
 				724BA6D616C039AB00BCE3FA /* icon.png in Resources */,
 				727C90ED16DAB4820093E365 /* Physicians.json in Resources */,
+				72CADD9D16F7F0850084FEA1 /* CertifiedAthleticTrainers.json in Resources */,
+				72CADD9E16F7F0850084FEA1 /* InfoPlist.strings in Resources */,
+				72CADD9F16F7F0850084FEA1 /* MainStoryboard_iPad.storyboard in Resources */,
+				72CADDA016F7F0850084FEA1 /* MainStoryboard_iPhone.storyboard in Resources */,
+				72CADDA116F7F0850084FEA1 /* Fb.jpeg in Resources */,
+				72CADDA216F7F0850084FEA1 /* NursePractioners.json in Resources */,
+				72CADDA516F7F0850084FEA1 /* PhysicianAssistants.json in Resources */,
+				72CADDA616F7F0850084FEA1 /* ashleythomas.png in Resources */,
+				72CADDA716F7F0850084FEA1 /* briankelly.png in Resources */,
+				72CADDA816F7F0850084FEA1 /* davidkloehs.png in Resources */,
+				72CADDA916F7F0850084FEA1 /* davidmarshall.png in Resources */,
+				72CADDAA16F7F0850084FEA1 /* dennisdevito.png in Resources */,
+				72CADDAB16F7F0850084FEA1 /* derekzefo.png in Resources */,
+				72CADDAC16F7F0850084FEA1 /* jedaxelrod.png in Resources */,
+				72CADDAD16F7F0850084FEA1 /* jillflanagan.png in Resources */,
+				72CADDAE16F7F0850084FEA1 /* jorgefabregas.png in Resources */,
+				72CADDAF16F7F0850084FEA1 /* kirsten-warnock.jpg in Resources */,
+				72CADDB016F7F0850084FEA1 /* lyndapalmer.png in Resources */,
+				72CADDB116F7F0850084FEA1 /* melissaleake.png in Resources */,
+				72CADDB216F7F0850084FEA1 /* michaelbusch.png in Resources */,
+				72CADDB316F7F0850084FEA1 /* michaelschmitz.png in Resources */,
+				72CADDB416F7F0850084FEA1 /* nancykralovich.png in Resources */,
+				72CADDB516F7F0850084FEA1 /* rebeccalunsford.png in Resources */,
+				72CADDB616F7F0850084FEA1 /* robertmontero.PNG in Resources */,
+				72CADDB716F7F0850084FEA1 /* stephanieathre.png in Resources */,
+				72CADDB816F7F0850084FEA1 /* stephen-kroll-profile.jpg in Resources */,
+				72CADDB916F7F0850084FEA1 /* timschrader.png in Resources */,
+				72CADDBA16F7F0850084FEA1 /* veronica-hill.jpg in Resources */,
+				72CADDBB16F7F0850084FEA1 /* wallacewilson.png in Resources */,
+				72CADDBC16F7F0850084FEA1 /* williamprimos.png in Resources */,
+				72CADDBD16F7F0850084FEA1 /* willimonsamuel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,12 +451,39 @@
 				727C90EB16DA90CB0093E365 /* GreenBox.m in Sources */,
 				727CDF6C16F3A04B004CBC3E /* AppointmentWebViewController.m in Sources */,
 				72D4E03F16F55F32001FFC6D /* Appointment2ViewController.m in Sources */,
+				72CADDA316F7F0850084FEA1 /* PersonDetailViewController.m in Sources */,
+				72CADDA416F7F0850084FEA1 /* PersonViewController.m in Sources */,
+				72CADDBE16F7F0850084FEA1 /* TeamViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		72CADD7516F7F0850084FEA1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72CADD7616F7F0850084FEA1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		72CADD7716F7F0850084FEA1 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72CADD7816F7F0850084FEA1 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		72CADD7916F7F0850084FEA1 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72CADD7A16F7F0850084FEA1 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
 		9A20534C16A5F28800399FB0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
