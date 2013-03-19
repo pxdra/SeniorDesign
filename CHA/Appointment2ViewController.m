@@ -544,7 +544,17 @@ NSMutableArray *timeArray;
         NSLog(@"All required parts filled");
     }
     else
-        NSLog(@"Something's amiss...");
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"You have not filled in all required sections."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+                NSLog(@"Something's amiss...");
+        [alert show];
+//        [alert release];
+    }
+
 }
 
 - (void) sendEmailTo:(NSString *)to withSubject:(NSString *) subject withBody:(NSString *)body {
