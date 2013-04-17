@@ -1,4 +1,46 @@
-[
+ [ {
+  "name" : "John Addison Alsobrook , M.D.",
+  "picString" : "john-addison-alsobrook-profile.jpg",
+  "paragraphs" : ["Dr. John A. Alsobrook joined Children's Orthopaedics of Atlanta in 2013. He began his academic career earning his undergraduate degree from Davidson University in North Carolina and his MBA from The George Washington University in Washington, D.C. It was then that he decided to pursue a career as a physician so he decided to take some pre-med coursework at Virginia Commonwealth University while volunteering in the Columbia Retreat Hospital Emergency Center in Richmond, Virginia.",
+                  "From there, he was accepted into medical school at the prestigious University of Florida in Gainesville, Florida where he completed his Doctor of Medicine and a Community Health and Family Residency. In his third year, he served as Chief Resident.",
+                  "In 2006, Dr. Alsobrook relocated to Indiana to pursue a Fellowship in Sports Medicine at Notre Dame University. While in South Bend, he provided Sports Medicine services for all of the Fighting Irish athletes at the University.",
+                  "After completing his Sports Medicine Fellowship and training, Northeast Georgia Physicians Group (NGPG) in Buford, Georgia hired Dr. Alsobrook. At NGPG, Dr. Alsobrook built a thriving Sports Medicine practice in the Northeast Georgia community over the next five years. He serves as the team physician for Buford High School and has helped cover Gwinnett Gladiator Hockey Games. His practice focuses on caring for all non-operative orthopedic conditions as it relates to fracture care, sprains, strains, and concussions.",
+                  "When not seeing patients at COA and spending time with his family, he enjoys running, triathlon training, hiking, camping, golf, snow and water skiing and whitewater canoeing."],
+  "greenBoxes" : [
+                {
+                  "title" : "Education",
+                  "bullets" : ["College – Davidson College, 1992",
+                               "Graduate – The George Washington University, MBA, 1997",
+                               "Medical School – University of Florida, 2003",
+                               "Post Graduate: Community Health & Family Residency Program – University of Florida, 2003-2006 & South Bend Sports Medicine Fellowship – University of Notre Dame, 2006-2007"]
+                  },{
+                  "title" : "Board Certifications",
+                  "bullets" : ["American Board of Family Medicine",
+                               "Certificate of Added Qualification in Sports Medicine",
+                               "American Board of Family Practice" ]
+                  }, {
+                  "title" : "Licensure",
+                  "bullets" : ["Medical Licensure – State of Georgia"]
+                  }, {
+                  "title" : "Professional Affiliations",
+                  "bullets" : ["American Medical Society for Sports Medicine",
+                               "American College of Sports Medicine",
+                               "American Academy of Family Physicians",
+                               "Adjunct Faculty University of Florida College of Medicine"]
+                  },{
+                  "title" : "Areas of Clinical Interest",
+                  "bullets" : ["Non-operative orthopaedic conditions – fracture care, sprains, strains & concussions"]
+                  },{
+                  "title" : "Personal Interests",
+                  "bullets" : ["Spending time with family",
+                               "Running & triathlon training",
+                               "Hiking & camping",
+                               "Golf",
+                               "Snow & water skiing",
+                               "Whitewater canoeing"]
+                  }
+    ]
+  },
  {
  "name" : "Jed Axelrod, M.D.",
  "picString" : "jedaxelrod.png",
@@ -28,7 +70,51 @@
                     "bullets" : ["Foot and Ankle Disorders", "Blount's Disease", "Spinal Deformity", "Spina Bifida"]
                 }
                 ]
- },
+  },{
+  "name" : "John M Buchanan, D.O.",
+  "picString" : "john-b-buchanan-profile.jpg",
+  "paragraphs" : ["Dr. John (Buck) Buchanan is a native of Ft. Lauderdale, Florida where his love of sports was born. Specifically, his love and skill in baseball, along with his academic achievements, earned him an academic/athletic scholarship to Mercer University in Macon, Georgia. As an undergraduate, he lettered four years in NCAA Division I baseball, was elected Captain and earned his B.A. in Psychology.",
+                  
+                  "Then, after completing a B.S. in Biological Sciences in 1990 at Florida International University, he joined the United States Army for nine years where he would have a plethora of honors and experiences that prepared him for the physician he is today. He was promoted to Captain, earned his Doctor of Osteopathic Medicine, was a Flight Surgeon and Assistant Chief, completed a Traditional Internship at Walter Reed Medical Center in Washington, D.C., was a contract physician for Spectrum Emergency Care in Belen, New Mexico, was the General Medical Officer at William Beaumont Army Medical Center in El Paso, Texas, just to name a few.",
+                  
+                  "After an Honorable Discharge from the Army in 1999, he moved to Birmingham, Alabama to complete a Family Medicine Residency with a special emphasis in Primary Care Sports Medicine. A year later, he was awarded a Sports Medicine Fellowship at Saint Joseph Regional Medical Center in South Bend, Indiana, where he provided medical coverage to the athletes of Notre Dame and local high schools.",
+                  
+                  "With his post graduate education completed, Dr. Buchanan was recruited for Sports Medicine Physician position at Mercy Health System in Lake Geneva, Wisconsin. He would spend two years in Wisconsin providing medical care and event coverage to athletes at regional high schools, universities and even professional athletes.",
+                  
+                  "With a desire to establish permanent roots in a warmer climate, Dr. Buchanan moved back to the South where he would build a Sports Medicine practice at Georgia Sports Medicine in Duluth, Georgia for two years and then at Northeast Georgia Health System in Gainesville for seven years. He has served as the Head Team Physician for Mill Creek High Scholl since it opened in 2004 and has also provided sports medicine care to numerous other area high school and college athletes. He has served as an Assistant Team Physician for the Gwinnett Gladiators since 2006.",
+                  
+                  "In 2013, he joined Children's Orthpaedics of Atlanta as a Sports Medicine Physician where he specializes in non-surgical orthopaedics. While not seeing patients in the office or supporting local high school athletics with medical coverage, Dr. Buchanan enjoys spending time with his wife Sherri and his three children, Kylie, Jackson and Lindsay."
+  ],
+  "greenBoxes" : [
+                  {
+                  "title" : "Education" ,
+                  "bullets" : ["College – Mercer University-1985 & Florida International University-1990",
+                               "Graduate – Nova Southeastern University-1994",
+                               "Internship- Walter Reed Army Medical Center-1995",
+                               "Residency- University of Alabama Birmingham-2001",
+                               "Fellowship-University of Notre Dame-2002"]
+                  },{
+                  "title" : "Hospital Affiliations",
+                  "bullets" : ["Children's Health Care of Atlanta-Scottish Rite",
+                               "Northeast Georgia Medical Center"]
+                  },{
+                  "title" : "Board Certifications",
+                  "bullets" : ["Primary Care Sports Medicine CAQ – 2002 & 2012",
+                               "American Board of Family Practice – 2002 & 2008"]
+                  },{
+                  "title" : "Licensure",
+                  "bullets" : ["Medical License - State of Georgia"]
+                  },{
+                  "title" : "Professional Affiliations",
+                  "bullets" : ["American Academy of Family Physicians",
+                               "American College of Sports Medicine",
+                               "American Medical Society of Sports Medicine"]
+                  },{
+                  "title" : "Areas of Clinical Interest",
+                  "bullets" : ["Baseball and Cheerleading injuries"]
+                  }
+  ]
+  },
  {
      "name" : "Michael T. Busch, M.D.",
      "picString" : "michaelbusch.png",

@@ -1,0 +1,59 @@
+[
+ {
+ "name" : "Meridian Mark",
+ "address" : "5445 Meridian Mark Road Suite 250, Atlanta, GA 30342",
+ "disc" : "5445 Meridian Mark Road \nSuite 250 \nAtlanta, GA 30342",
+ "locdata" : "33.903645,-84.354127"
+ },{
+ "name" : "Alpharetta",
+ "address" : "3300 Old Milton Parkway Suite 310, Alpharetta, GA 30005",
+ "disc" : "3300 Old Milton Parkway\nSuite 310\nAlpharetta, GA 30005",
+ "locdata" : "34.069103,-84.266467"
+ } , {
+ "name" : "Duluth",
+ "address" : "2270 Hwy 120 Suite 100, Duluth,GA 30097-4012",
+ "disc" :"2270 Hwy 120\nSuite 100, \nDuluth, Georgia 30097-4012",
+ "locdata" :"33.978617,-84.10326"
+ },{
+ "name" : "Fayette",
+ "address" : "1265 Highway 54 West Suite 200, Fayetteville, GA 30214",
+ "disc" :"1265 Highway 54 West\nSuite 200\nFayetteville, GA 30214",
+ "locdata" :"33.452516,-84.506965"
+ }, {
+ "name" : "Forsyth",
+ "address" : "410 Peachtree Parkway Suite 300, Cumming, GA 30041",
+ "disc" :"1265 Highway 54 West\nSuite 200\nFayetteville, GA 30214",
+ "locdata" :"34.154165,-84.178169"
+ },{
+ "name" : "Marietta",
+ "address" :"175 White Street, NW Suite 200, Marietta, GA 30060",
+ "disc" : "175 White Street, NW\nSuite 200\nMarietta, GA 30060",
+ "locdata" : "33.971908,-84.554772"
+ } , {
+ "name" : "Hamilton Mill",
+ "address" : "2069 Teron Trace Dacula, Georgia 30019",
+ "disc" : "2069 Teron Trace\nDacula, Georgia 30019",
+ "locdata" :"34.06772,-83.90302"
+ }, {
+ "name" : "Stockbridge",
+ "address" : "1500 Hudson Bridge Rd Stockbridge, Georgia 30281",
+ "disc" : "1500 Hudson Bridge Rd\nStockbridge, Georgia 30281",
+ "locdata" : "33.50358,-84.23890"
+ }
+ 
+ ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

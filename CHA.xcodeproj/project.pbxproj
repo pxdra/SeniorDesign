@@ -49,6 +49,9 @@
 		72CADDBE16F7F0850084FEA1 /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CADD9C16F7F0850084FEA1 /* TeamViewController.m */; };
 		72D4E03F16F55F32001FFC6D /* Appointment2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D4E03E16F55F32001FFC6D /* Appointment2ViewController.m */; };
 		72E3061F16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72E3061E16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg */; };
+		72F4C72D171F3238007D3EA0 /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 72F4C72C171F3238007D3EA0 /* Locations.json */; };
+		72F4C730171F3803007D3EA0 /* john-addison-alsobrook-profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72F4C72E171F3803007D3EA0 /* john-addison-alsobrook-profile.jpg */; };
+		72F4C731171F3803007D3EA0 /* john-b-buchanan-profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72F4C72F171F3803007D3EA0 /* john-b-buchanan-profile.jpg */; };
 		9A20534416A5F28800399FB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534316A5F28800399FB0 /* UIKit.framework */; };
 		9A20534616A5F28800399FB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534516A5F28800399FB0 /* Foundation.framework */; };
 		9A20534816A5F28800399FB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A20534716A5F28800399FB0 /* CoreGraphics.framework */; };
@@ -130,6 +133,9 @@
 		72D4E03D16F55F32001FFC6D /* Appointment2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appointment2ViewController.h; sourceTree = "<group>"; };
 		72D4E03E16F55F32001FFC6D /* Appointment2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appointment2ViewController.m; sourceTree = "<group>"; };
 		72E3061E16BB7624002F2512 /* childrens-orthopaedics-atlanta-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "childrens-orthopaedics-atlanta-logo.jpg"; sourceTree = "<group>"; };
+		72F4C72C171F3238007D3EA0 /* Locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
+		72F4C72E171F3803007D3EA0 /* john-addison-alsobrook-profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "john-addison-alsobrook-profile.jpg"; path = "profile_pictures/john-addison-alsobrook-profile.jpg"; sourceTree = "<group>"; };
+		72F4C72F171F3803007D3EA0 /* john-b-buchanan-profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "john-b-buchanan-profile.jpg"; path = "profile_pictures/john-b-buchanan-profile.jpg"; sourceTree = "<group>"; };
 		9A20533F16A5F28800399FB0 /* CHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A20534316A5F28800399FB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A20534516A5F28800399FB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -261,6 +267,9 @@
 		9A20534916A5F28800399FB0 /* CHA */ = {
 			isa = PBXGroup;
 			children = (
+				72F4C72E171F3803007D3EA0 /* john-addison-alsobrook-profile.jpg */,
+				72F4C72F171F3803007D3EA0 /* john-b-buchanan-profile.jpg */,
+				72F4C72C171F3238007D3EA0 /* Locations.json */,
 				9A9D7C5116C7460000F1FEA6 /* AddressViewController.h */,
 				9A9D7C5216C7460000F1FEA6 /* AddressViewController.m */,
 				9A20535216A5F28800399FB0 /* AppDelegate.h */,
@@ -428,6 +437,9 @@
 				72CADDBB16F7F0850084FEA1 /* wallacewilson.png in Resources */,
 				72CADDBC16F7F0850084FEA1 /* williamprimos.png in Resources */,
 				72CADDBD16F7F0850084FEA1 /* willimonsamuel.png in Resources */,
+				72F4C72D171F3238007D3EA0 /* Locations.json in Resources */,
+				72F4C730171F3803007D3EA0 /* john-addison-alsobrook-profile.jpg in Resources */,
+				72F4C731171F3803007D3EA0 /* john-b-buchanan-profile.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
