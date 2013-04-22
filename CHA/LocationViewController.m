@@ -36,25 +36,18 @@
 
 - (NSArray*) getData
 {
-  Location *loc1 = [Location alloc];
-  loc1 = [loc1 initWithName:@"Meridian Mark" WithAddress:@"5445 Meridian Mark Road Suite 250, Atlanta, GA 30342" WithDisc:@"5445 Meridian Mark Road \nSuite 250 \nAtlanta, GA 30342" WithLocData:@"33.903645,-84.354127"];
-  
-  Location *loc2 = [Location alloc];
-  loc2 = [loc2 initWithName:@"Alpharetta" WithAddress:@"3300 Old Milton Parkway Suite 310, Alpharetta, GA 30005" WithDisc:@"3300 Old Milton Parkway\nSuite 310\nAlpharetta, GA 30005" WithLocData:@"34.069103,-84.266467"];
-  
-  Location *loc3 = [Location alloc];
-  loc3 = [loc3 initWithName:@"Duluth" WithAddress:@"2270 Hwy 120 Suite 100, Duluth,GA 30097-4012" WithDisc:@"2270 Hwy 120\nSuite 100, \nDuluth, Georgia 30097-4012" WithLocData:@"33.978617,-84.10326"];
-  
-  Location *loc4 = [Location alloc];
-  loc4 = [loc4 initWithName:@"Fayette" WithAddress:@"1265 Highway 54 West Suite 200, Fayetteville, GA 30214" WithDisc:@"1265 Highway 54 West\nSuite 200\nFayetteville, GA 30214" WithLocData:@"33.452516,-84.506965"];
-  
-  Location *loc5 = [Location alloc];
-  loc5 = [loc5 initWithName:@"Forsyth" WithAddress:@"410 Peachtree Parkway Suite 300, Cumming, GA 30041" WithDisc:@"1265 Highway 54 West\nSuite 200\nFayetteville, GA 30214" WithLocData:@"34.154165,-84.178169"];
-  
-  Location *loc6 = [Location alloc];
-  loc6 = [loc6 initWithName:@"Marietta" WithAddress:@"175 White Street, NW Suite 200, Marietta, GA 30060" WithDisc:@"175 White Street, NW\nSuite 200\nMarietta, GA 30060" WithLocData:@"33.971908,-84.554772"];
-  
-  return [NSArray arrayWithObjects:loc1, loc2, loc3, loc4, loc5, loc6, nil];
+  NSArray *information = [self getJSONArray];
+  NSMutableArray *locationArray = [[NSMutableArray alloc] init];
+  for (NSDictionary * location in information){
+    NSString *name = [location objectForKey:@"name"];
+    NSString *address = [location objectForKey:@"address"];
+    NSString *disc = [location objectForKey:@"disc"];
+    NSString *locdata = [location objectForKey:@"locdata"];
+    Location *loc = [Location alloc];
+    loc = [loc initWithName:name WithAddress:address WithDisc:disc WithLocData:locdata];
+    [locationArray addObject:loc];
+  }
+  return locationArray;
 }
 
 - (void)didReceiveMemoryWarning
@@ -121,4 +114,13 @@
 
 }
 
+-(NSArray*)getJSONArray{
+  NSString *path = [[NSBundle mainBundle] pathForResource:@"Locations"
+                                                   ofType:@"json"];
+  NSData* data = [NSData dataWithContentsOfFile:path];
+  NSError *e = nil;
+  NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
+  
+  return jsonArray;
+}
 @end

@@ -704,13 +704,16 @@ NSMutableArray *timeArray;
   CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
   NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];  
   [dateFormat setDateFormat:@"MMM d, YYYY"];
-  
   NSDate *defaultDate = [dateFormat dateFromString:@"Jan 1, 1995"];  
   datePickerView = [[UIDatePicker alloc] initWithFrame:pickerFrame];
   datePickerView.datePickerMode = UIDatePickerModeDate;
-  datePickerView.maximumDate = [NSDate date];
-  if (textField == dob_)
-  datePickerView.date = defaultDate;
+  if (textField == dob_){
+    datePickerView.date = defaultDate;
+    datePickerView.maximumDate = [NSDate date];
+  } else {
+    datePickerView.minimumDate = [NSDate date];
+  }
+
   
   [actionSheet addSubview:datePickerView];
   
