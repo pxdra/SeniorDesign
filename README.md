@@ -8,7 +8,9 @@ Team 10 (mlfong, pxdra, cwisdom3)
 
 Working with Children's Healthcare of Atlanta on making an iOS app
 
+## clone instructions
 
+    $ git clone https://github.com/pxdra/SeniorDesign.git
 
 
 
